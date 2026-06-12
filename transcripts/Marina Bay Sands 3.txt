@@ -1,0 +1,715 @@
+First ever guest on the hugely successful Lex Friedman podcast.
+So if any of you have ever listened to Lex Friedman, Max Tinkmark was the first guest on that show.
+And from then to now, he comes to you with Super AI literature for Max.
+Come on up. Max Tinkmark from MIT.
+Yeah.
+Good morning.
+Now, I am so excited to be back here in Singapore to talk about how to build a pro-human future with artificial intelligence.
+I'm going to try to persuade you that we snad a fork in the road.
+There are two separate paths that both involve a more powerful AI.
+One I'm going to call the path to replacement AI, the race to replace.
+And the other I'm going to call the pro-human path.
+And I'm going to talk about the strategies for how we can get onto that second path.
+But first, let's do a show of hands.
+Raise your hand if you want AI tools that help us cure diseases and solve problems.
+That's a lot of hands.
+Okay, take them down.
+And now raise your hand again if you're excited about a future that makes you all economically obsolete and replaces us.
+I can't see any hands.
+I don't have it at all.
+Maybe one joker here.
+Now, the bad news is I feel that for quite some time we've been on not exactly that path that you don't want.
+The race to replace.
+And don't take my word for it.
+Here is Elon Musk.
+Never mind, scenario.
+Probably none of us will have a job.
+Probably none of us will have a job.
+And here is the pen again.
+Never mind, scenario.
+Hey, guys.
+Something weird happened to the audio when he said the AI is going to be in charge, not the humans.
+Exciting?
+Your dream future?
+So Elon Musk is telling us here that there are other ways to replace where machines are going to gradually replace more and more important jobs.
+In fact, all of them.
+It's going to replace more and more human decision-making power.
+Ultimately, we'll be in charge of Earth.
+And he also signed in May 2023 together with all the other top CEOs.
+A statement saying it could also replace our species entirely by driving us extinct.
+And then on the way there, AI has also replaced relationships.
+Replace human girlfriends with AI girlfriends.
+Human therapists with AI therapists, etc.
+So that's the bad news.
+What's the good news?
+Well, the good news is that there is a remarkable shift in the tide happening.
+I started thinking of steam in the last year and especially in the last month.
+And I want to share with you this optimism.
+First, in America, there is a remarkable shift in public opinion.
+We've had leading Republicans and Democrats coming together.
+We locked them in a hotel room and said they couldn't come out until they wrote down a bunch of principles and things they agreed on.
+You might have thought they wouldn't agree on anything.
+They agreed on 32 principles for pro-human AI on topics such as how to keep humans in charge,
+how to preserve human agency and liberty, protecting human experience, and so on.
+And this has gained support from a massive number of American organizations, from left to right,
+from labor unions to faith groups.
+And in polls in America, only about 5% of Americans support the status quo of an unregulated race to superintelligence now.
+And as if it couldn't get better, the Pope just weighed in on this with his encyclical saying,
+which also supports most of these principles.
+And as if that wasn't enough good news, the White House has really pivoted in recent weeks,
+coming out and talking about maybe regulating AI the way we regulate medicines.
+And even geopolitically, the U.S. and China talking about collaborating on guardrails,
+it really was not in my bingo card when this year began that I would see Donald Trump come back
+and talk to Xi Jinping like this.
+And we talked about possibly working together with guardrails.
+And then he goes on and says, yeah, we probably will.
+And legislation is also happening across the world.
+In China, now you require to label AI content.
+And there's been a crackdown on AI girlfriends and other metamorphic AI in Europe.
+The EU AI Act is coming into full force October 2nd.
+In America, Donald Trump has talked about how we need a kill switch to be able to shut down data centers in a pinch.
+And the companies, Anthropic, as you probably know, released Fable 5, the public version of Mythos, this morning.
+And they have come out together with OpenAI and DeepMind's leadership and started talking about maybe causing the riskiest AI development.
+Who had that in their bingo card a month ago?
+And OpenAI is now in Washington, D.C. pitching all sorts of common sense AI regulations.
+So bad news is I've been on the wrong path for a while.
+The good news is I've never seen things shift this quickly and above during over a decade that I've been working on this stuff.
+What?
+You might say, okay, fine.
+Things are getting...
+But the superintelligence is just science fiction and decades away, so why even waste time thinking about it?
+Well, people used to think it was decades away because AI used to suck.
+This is four years ago, mid-journey.
+But three years ago, same exact prompt, looks like this.
+Two years ago, it starts to move.
+And now, it moves a lot.
+Remarkably fast AI progress here.
+And if you shift to robotics, same story.
+2015, really sucks.
+The next one is particularly embarrassing for me because it's the MIT robot.
+But two years ago, they're starting to dance.
+And now, 2026, they're doing Kung Fu.
+So even though, in my opinion, AI was radically overhyped from the 1950s until about four years ago,
+since then, it's been mostly underhyped, with progress going much faster than people predicted.
+You know, almost all my AI colleagues thought six, seven years ago that we were decades away
+from having machines that could just master language and knowledge at human level,
+basically passing the Turing test, basically chat to the before.
+And they were, of course, all wrong.
+And we have massive investments in AI driving momentum of fast.
+We have more investments in this than all other science combined,
+way more than the Manhattan Project.
+And if you look at the prediction markets, the result of all this is
+the timelines have totally collapsed from decades away.
+People like the CEO of Anthropic saying,
+we're going to have a country of geniuses in a data center next year.
+The truth is, we have to be very humble about timelines.
+We do not know, of course, how far off AGI or superintelligence really is.
+But the obvious takeaway is, we have to stop being confident that it's so far away,
+we shouldn't care about it, because then we're going to seem like dinosaurs stuck in 2021.
+But, you might say,
+maybe it's imminent, but surely the superintelligence is controllable,
+so you never have to worry about losing charge of it like Elon Musk warned about.
+No.
+Based on my technical expertise,
+we still have no idea how to control
+millions or billions or trillions of machines
+that are vastly smarter than us.
+Don't take my word for it.
+Once these artificial intelligences get smarter than we are,
+they will take control.
+They'll make us irrelevant.
+And that's quite worrying.
+And nobody knows how to prevent that, for sure.
+And you don't need to take Jeff Hinton's word for it either,
+because Alan Turing,
+the godfather of artificial intelligence,
+said basically the same thing in 1951.
+That if you make maximum numbers of machines
+that are way more capable than us in every which way,
+you should expect them to take charge.
+How could he say that?
+Because he's obviously not thinking about superintelligent AI
+as just another technology like electricity or the internet.
+He's thinking about it as these intelligent agents,
+as a new species.
+And then it's pretty natural that the smarter species dominates.
+If you doubt that,
+just walk down to the nearest zoo
+and ask yourself, you know,
+who is in the cages?
+Is it the humans?
+Why not?
+Because the smarter species tend to be the one who figures out how to dominate.
+So that's, for this reason,
+it's a good idea to not rush to build things like this
+that we have no idea how to control.
+And the good news here is that
+even though there's a lot of competition
+between companies and between countries,
+people who have power and governments that have power
+don't want to lose it.
+So when this basic scientific fact starts to sink in,
+you know,
+there's a great alignment and interest
+between the US and China and other governments
+to build all the great stuff that we can control
+and cool it a little bit on this stuff.
+Because ultimately,
+the greatest threat to any country
+is not another country.
+It's out of control machines.
+But,
+you might say,
+isn't this superintelligence,
+it's the fastest form in the US,
+necessary to do any of the stuff we're excited about?
+No, it's not.
+We can actually have our cake and eat it.
+Your human intelligence has both three superpowers.
+Domain intelligence,
+generality,
+and autonomy.
+Which means
+that an AI that has only one or two of these superpowers
+can never wholesale replace you on the job market.
+So if we stay out of the white region in the middle,
+AGI,
+you are not going to be made irrelevant
+and fully obsolete in the job market.
+Moreover,
+we have very good ideas
+for how to keep systems in charge
+that have only two of the,
+at most,
+of the superpowers.
+So staying out of the middle part there,
+also keeps humanity in charge.
+So what can we do
+with this controllable tool AI
+corresponding to all the colored parts
+of my pen diagram?
+A lot.
+We can save over a million road deaths per year
+by,
+with autonomous vehicles,
+with tool AI,
+without AGI.
+We can save more lives
+by eliminating silly mistakes in hospitals
+with tool AI,
+without AGI or superintelligence.
+We can diagnose prostate cancer,
+lung cancer,
+and countless other diseases
+with tool AI.
+We can do pandemic prevention.
+We can give out how to fold proteins
+and revolutionize drug discovery,
+and even win the Nobel Prize
+for alpha fold
+with tool AI,
+without AGI.
+We can make enormous strides in robotics,
+turbocharging research,
+and superpromptivity
+with controllable tool AI,
+without AGI.
+We can cut electricity,
+make consumption,
+we can make education more accessible
+and more personalized with tool AI.
+We can transform basically every sector
+of the economy
+with controllable tool AI,
+without AGI.
+And if we go global,
+I was involved in this nature paper
+where we show that
+even the sustainable development goals
+that pretty much every country on earth
+agrees on,
+these can be achieved faster
+with tool AI,
+without AGI.
+So we can really have our cake and eat
+and get so much of the upsides
+without risking it all
+by building something crazy
+too soon.
+But, you might say,
+superintelligence,
+even if it's uncontrollable
+and imminent
+and not necessary,
+it's kind of inevitable
+because people are always
+going to build anything
+that they can make money on, right?
+No, actually.
+There are many examples in history.
+You might say,
+people are going to rush
+to the red region here
+if it's a bad idea
+because of money.
+No.
+History is full of examples
+of technology
+you could make a lot of money on
+that we haven't done.
+You here, for example,
+you look very smart.
+I bet if I could make
+a million clones of you
+and sell them,
+I could make a ton of money.
+But we've decided,
+globally,
+to just not do human cloning
+because we didn't want to do
+anything crazy with biotech
+that lose control
+over our species.
+Step one was to stigmatize it.
+So if you meet someone here
+who's really dumb home
+about placing all humans
+with super-intelligent robots
+or whatever,
+you have a hard time.
+That's how it starts.
+The second step
+is the regulation.
+In America today,
+there are less regulations
+on AI companies
+than on sandwich shops.
+If I decide
+to open a sandwich shop
+in the Boston area
+where I live
+and the health inspector
+comes in and is like,
+hey Max,
+I found 18 rats
+in your kitchen.
+You're not selling
+any sandwiches.
+I could turn around
+to this guy
+from the government
+and be like,
+no,
+don't tell anyone
+but I'm not going
+to sell any sandwiches.
+I'm just going to release
+a AI girlfriend product
+for 10-year-olds
+and a hacking pool
+for criminals
+and I'm going to
+also release
+uncontrollable super-intelligence
+tonight
+at 8 p.m.
+The guy from the government
+would have to tell me,
+yeah, you know,
+that's all legal,
+go ahead,
+but just don't sell
+any sandwiches.
+Okay?
+So no wonder
+strange things
+happen when we give
+us dumb incentives.
+As I mentioned though,
+this tide is really shifting
+and if we end up
+with something
+like what the U.S. government
+is talking about now
+and treat AI
+more like we treat
+any other industry,
+the opposite
+will be the case.
+If I walk into
+the Food and Drug Administration
+and say,
+hey, you know,
+it's inevitable
+that my biotech company
+is going to release
+this new wonder drug
+in a year
+that's going to be so great,
+it might kill everybody
+but it's going to cure cancer too.
+She would say to me,
+where's your clinical trial?
+Oh, you don't have one?
+I'll come back
+when you do, buddy.
+Bing!
+Next customer, please.
+No.
+So it's absolutely
+not inevitable
+that we're going to get
+things that ultimately
+nobody wants.
+Finally,
+I want to,
+we talked a bunch
+about how many amazing
+things we can do
+with controllable AI tools
+that lack these crazy
+ways to replace downsides
+and I want to end
+by talking about
+one example
+I'm particularly passionate about
+because I've been working
+on a lot
+with my colleagues
+at MIT and elsewhere
+which is using AI
+to produce
+provably bug-free
+and unhackable code.
+I commend the organizers
+of this conference
+for having the foresight
+to choose it
+to be on the same day
+that Mythos went by.
+Now,
+we all know
+that bugs
+and vulnerabilities
+enabling hacking
+have been tormenting us
+for a very, very long time.
+One approach to this
+is to play
+the cat and mouse game
+and just hope
+that you can use
+Mythos,
+fable 5,
+you know,
+fix all your vulnerabilities
+before some hackers do
+but there's a completely
+different approach
+where you have no bugs
+in the first place
+by changing the way
+we use AI
+and to do our coding
+and I want to end on that.
+So traditional coding
+you put in
+some amount of effort
+on the x-axis
+end up with code
+with some amount of bugs.
+Now,
+Vive coding is all the rage
+where you put in less effort
+so AI raised the code for you
+but there's still bugs.
+Alan Turing
+started already in the 50s
+talking about
+formal verification
+where instead
+you write down
+a specification
+that the code
+is supposed to meet
+because there's no bugs
+and then you proof
+that there are no bugs.
+Now there are no bugs
+but you spend
+vastly more effort
+10 times
+or 100 times more effort
+which is why
+you've never really caught on.
+But with AI
+you can do formal
+auto-verification
+where the AI
+raised the proof.
+We found that
+that worked
+68% of the time
+two years ago
+now it works
+96% of the time
+because of the
+rise in the height
+of AI.
+So we set our targets
+on something even more
+ambitious
+that I call
+vari-coding
+where you don't even
+write the code yourself.
+You just write
+the specification
+and the AI goes
+and writes the code
+and also a proof
+that the code
+does exactly
+what you want it to do.
+So it's like
+five coding
+without the bugs.
+Here's a paper
+about that.
+And this is not
+only something
+I think
+will make
+will transform
+cyber security
+so you'll never need
+to ever do
+a security patch
+again
+because there were
+no bugs
+to start with
+and you were
+unhackable
+to start with.
+But it's also
+something really great
+for the future
+of AI itself.
+So if you have
+any neural network
+biological
+or silicon-based
+that's learned
+something
+some algorithms
+some knowledge
+the exportable fraction
+my y-axis here
+is the fraction
+of all that
+that can be exported
+into English
+or
+or ideally
+C++
+or Python
+or Rust
+or some other
+programming language
+and I conjecture
+that this
+exportable fraction
+grows with intelligence.
+A cat
+figuring out
+a new way
+to catch a mouse
+cannot export
+this knowledge
+into Python
+whereas a human
+can export
+a lot of their knowledge
+to other humans
+and to machines
+and I conjecture
+that as we get
+ever more powerful
+AI
+this exportable fraction
+actually approaches
+100%.
+If that's true
+it's really wonderful
+because that means
+we no longer need
+to deploy
+these black box
+network-based systems
+that we don't understand
+in safety-critical context.
+Instead
+we can have this AI
+just write
+traditional
+export
+its machine-learned knowledge
+into traditional code
+and while it's added
+it can give us
+a proof also
+that this code
+does what it wants.
+So the way it works
+is you want an AI tool
+a powerful AI tool
+you write down
+the specifications
+for exactly
+what it should do
+and then this
+future
+super powerful AI
+that you don't trust
+or understand
+gives you the code
+that it wrote
+and proof
+that the code
+meets your spec.
+Wait
+you might say
+how can I possibly
+trust this
+when I don't understand
+or trust the AI
+and the code
+and the proof
+are just way too long
+for anyone to read.
+So here is the wonderful
+idea I want to leave you with
+which is very good news
+that just like it's
+much harder
+to find a needle
+in a haystack
+than to verify
+that it is a needle
+after you've found it
+it's much, much harder
+to discover
+the correct code
+and the proof
+that it's correct
+than it is to check
+that the proof
+is correct
+afterwards
+which you can do
+with a 300-line
+little code
+on your laptop.
+So you can really
+have your cake
+and eat it this way
+and get all
+the great AI tools
+plus the trust
+that they will always
+do what you want.
+So in summary
+this is my last slide
+I've told you
+that I feel
+after all this AI progress
+hit a fork in the road
+between the
+race to replace
+and its pro-human path
+and even though
+we've been on
+the wrong path
+for quite a while
+there is a remarkable
+swing of the
+pendulum right now
+over towards
+this pro-human path
+the way we win
+and get this great
+future is
+treat the AI industry
+like any other industry
+with common sense
+safety standards
+which will incentivize
+companies to build
+control of all tools
+and do what we want
+not some sort of
+weird, creepy
+psychopathic
+beings
+that we have no idea
+how to control
+so I'm very optimistic
+that we build a great
+pro-human future
+with artificial intelligence
+together
+thank you
+thank you so much
+and that is
+Max Tatemark
+and he looks like
+a professor from MIT
+doesn't he?
+if you're going to go
+back to school
+
+
+back to school
+
+back to school
+back to school
+
+back to school
+back to school
+back to school
+back to school
+
+
+back to school
+
+back to school
+back to school
+back to school
+
+
+
+back to school
+back to school
+
+back to school
+
+
+
+
+
+
+
+
+
+!
+back to school
+
+
+
+
+
+back to school
+!
+back to school
+

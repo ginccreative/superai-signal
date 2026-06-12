@@ -1,0 +1,319 @@
+I am models. So if you have heard of GLM, three letters, yeah, it's our models and our products.
+And to introduce our panel, let them introduce their organization and their role first.
+Good morning. My name is Jeff Su, based in Singapore, and I lead the APAC business for
+Mistral AI. If you haven't heard of Mistral AI, we're a Paris-based frontier AI company.
+And I spend most of my time working with governments, banks, telcos, and conglomerates,
+really understanding how AI can make a transformational shift in the way that they operate today.
+Good morning. I'm Cherry from Minimax. I'm a founding member at Minimax and now a manager
+at the global business. So we are our leading model lab. So we are working on not only LLM,
+but also like the multi-model models, video generation, speech generation, music generation.
+And also Minimax is a very globalized model company. So actually over 70% of our revenue
+are actually coming from global markets. So I'm very happy to see all of you here.
+I'm Hemant. I'm one of the investors at Lightspeed. We are a global venture capital firm.
+Very, very active in the AI across the world. Investors in Mistral, very, very, very happy
+investor in Mistral, in Anthropic and XCI at the foundation model layer across the world.
+In India we have some elements of the foundation model company for India.
+And across the stack we've done all the way done from chip layer all the way up to the application
+in MSS.
+Great. And give applause to all the speakers today.
+Yeah, today we were talking about frontier models. So as you look at the news, there's a new claw
+model coming out like maybe yesterday or maybe today. And that's one definition of frontier.
+But like we might have different versions of frontier. So what actually frontier means for you, for your models?
+Yeah, please share your opinions.
+Yeah, look, I think a lot has changed over the last 12 months. I mean, traditional concept of a frontier benchmark
+is topping some leaderboard somewhere. And we all know that's an extremely expensive and time-consuming effort.
+And the leaders always change. I think what really matters today when I tend to speak to the customers
+is actually frontier deployments. What can you actually effectively deploy in your government or in your enterprise
+to drive a significant change? And a large part of that question when it comes to government or enterprise deployment
+is how much of this capability can I own? How much of this capability can I control?
+And how much of this capability is durable in a very geopolitical world where you may not always have access
+or there may be shocks to the access to the supply chain in terms of chips, in terms of access to the API,
+and in terms of capability. So I think when we look at frontier today, I tend to look at it a lot more
+in terms of frontier deployment capabilities and all the key ingredients required to achieve that business transformation.
+Yeah, so for Minimax, we think the leading frontier is actually not only defined by the benchmark performance.
+So now the definition would be more like, so how many people in the real world are actually using your frontier models every day?
+So that's why when we actually optimize our models, we are trying to optimize its accessibility in the real world.
+Which means, for example, when we are treating our models, we are trying to improve the agentic capabilities
+in all the real use cases in our day-to-day work. And also we are trying to improve our cost efficiency
+to become one of the top, the most cost efficient model in the world, to make sure that in every corner of the world,
+every user can use the frontier model intelligence with a very low cost.
+So I think that's the only one definition this year, to see how many people in this world are actually using a model in their different life.
+So that's how we are doing our work daily. When we optimize our model, we are trying to optimize its agency capabilities in the real world tasks.
+And in the meantime, we are trying to optimize its affordability to make sure it's easy to use and low cost to use.
+Yeah, I agree with both the framings, but maybe instead of answering the question directly, let me just sort of zoom up and give you a few frameworks that I have really found helpful
+so the audience can really think about it on their own. I think framework number one is on how these super cycles,
+these important technical super cycles really play out and what phases they are in and what constitutes being at the frontier in those phases actually changes
+as the phases mature and then they shape the world, right? So the first framing I have is this extractive versus distributive phases of a super cycle.
+At the beginning of the super cycle, what you're trying to do is you're trying to extract some new natural resource.
+In this case, it just happens to be intelligence. But 100 years ago, it was oil. 50 years ago, it was a CPU cycle.
+30 years ago, it was a GPU cycle. Today is an AI token. But you are trying to extract this resource from the ground and 30, 40 years of research actually goes into the ground to just figure out a way to even dig for oil.
+And if you are at the front, to be at the frontier during the extractive phase means you are close to the extractive part of the cycle.
+And that's where the value really accrues. That's where the frontier really is. As the extractive resource becomes cheap and easily available, the cycle shifts from being extractive to what I call distributive.
+And you have to take that resource and you have to put it into different things. You are not just in the extraction of oil business. You are in the business of putting oil into machines and building better cars.
+And then you go into the distributive phase of the cycle. And frontier changes. It's no longer important to be the best oil extractor or the best AI token extractor.
+It's more important to be, you know, can you really do real world tasks, agentically? Can you actually solve the customer's problems?
+So that's where the world is going to shift. And we are seeing different companies. I'll keep coming back to this framing again and again.
+As we see these phases play out, the frontier changes. The second thing that we see a lot of is there are two kinds of problems you can solve with these resources.
+One is what I call the scale problem. You have it. You solve an issue, then you just got to solve it more cheaply, abundantly, for a trillion times more.
+And the second type of problem we see are more scope problems. It's not the scale, it's the scope. Solving a coding problem is a scale problem, right?
+If you solve it well, you just have to make sure that you solve it cheaply for enough number of people to make money.
+Scope problems are much more complicated. The scope changes as you go deep into it. Cancer, research, mathematics, bio, material science are scope problems.
+You can take an intelligence and solve it for one type of cancer, but then a new thing comes up and it doesn't work anymore.
+So you've got to keep iterating. So we see both of these frameworks being very helpful in thinking about what the frontier is going to look like.
+As the cycle matures and shapes. Great. So the next question is for Mr. Raul because you're definitely the leading and frontier European models and Air Labs.
+So what kind of advantages and challenges do you often mean like your daily work or business?
+Yeah, so look, I think there's a lot of advantages and you know, there's also some disadvantages of being a European company. I think the first advantage is Europe is filled with some industrial heavyweights that have really helped us solve that scope problem.
+So we've really enjoyed our partnership with ASML because it allows us to bring our capabilities to the absolute frontier of material science in trying to innovate in extreme UV lithography.
+We just recently did our first ever customer summit in Paris and we actually announced our strategic partnership with Airbus.
+So once again, these are organizations with vast amounts of proprietary data that we can actually take and combine with our technology to drive solutions in the scope area.
+The challenge to be honest, being the European company, there's no denying there's a very significant difference in liquidity and in access to funding compared to the US.
+I mean, the US and Silicon Valley has done this for a very long time and they have very efficient waves of raising large amounts of capital.
+And I think the other thing to be very upfront is the EU is effectively or Europe is effectively 27 different markets trying to operate as one.
+Or else I think when you look at China or when you look at America, you've got a single regulatory or legal framework.
+So, you know, I think you've got the advantages that there's industry giant waves where they have lots of interesting data and very interesting problems to solve.
+You have the disadvantage of market fragmentation.
+But I think we've seen a lot of moves in the last 12 months to make it a little bit easier for companies, more companies like Mistral to emerge from the EU.
+So, yeah, it's a very interesting place to be in.
+And I think the final advantage just not to be too geopolitical, it's really important that organizations everywhere know that it's not just a two horse race where you have the option of China or the US when it comes to a choice on AI partner.
+I think Europe represents a very solid third alternative in considering who you should strategically partner with.
+Great. So I talk about Visual a lot of time at company and also I'm a huge fan of MediaMax.
+So actually I'm on the MediaMax official X account.
+So they give a post about myself.
+So when you look at the X, I'm actually there.
+And you have a lot of great models, text generation, video generation, voice model.
+So what do you see for your future key differentiators from all these whole source labs?
+Yeah, thank you. We're also a big fan of GLM.
+Yeah. So I think for MiniMax, we actually have two very special advantage.
+The first is, so we're not only good at LLM, but we also have a great video generation model called HILO.
+Yeah, and we are going to have a next big version very soon.
+And we also have a speech generation, music generation, and we start all this different modality model research from day one,
+like at the beginning when we founded Big Max.
+And now we are seeing, you know, we are seeing a trend that all these different modalities can merge into one.
+That is when you actually merge or unify these different modalities into one model.
+It not only improves the generation capabilities of your model, but it also like improves the understanding capabilities of your model.
+So that's what we see actually when we are going to move to the next stage.
+Very few companies in the world actually can do this, can merge all different modalities into one,
+and also unify understanding and generation.
+So this can obviously, you know, broaden the use case of this unified one model.
+And that's where we have special accumulation on.
+For example, recently when we released our new LLM, Minimax M3, so we just released this like one week ago.
+And this new model is not only an agentic model with very strong coding and tool using capabilities,
+but it's also a very great native VLM model, which means it actually has native visual understanding,
+like video understanding or image understanding.
+So I think that's where we are trying to build all the things together.
+And also the second thing I would like to mention is actually for Minimax,
+we are starting to improve our cost efficiency from day one.
+So every time we release a model, we want to make sure it is one of the most cost competitive in the world.
+For example, for our new LLM, Minimax M3 for this model, actually it's only like one third or like one fifth price of Sonnet 4.6.
+Yeah, but it can truly handle some coding and agentic tasks, you know, which Sonnet 4.6 can handle before.
+And also it's the same case for our video generation and also our TPS music generation.
+We want to, you know, provide a model that is only like one fifth or, you know, ten percent of other frontier models
+to make sure that every users in the world can use this model and no worries about their ROI.
+You know, because I think nowadays many AI native users or like large enterprise, they are, you know, very passionate about using models,
+but they are not like discussing ROI question like very seriously internally.
+But I think this will like come after.
+So when they are actually taking this into consideration, we want to make sure when they are still using Minimax model
+for a huge token consumption, the ROI still works for them.
+So that's what we're keep optimizing along the way.
+And I think it will like going forward to the future,
+we're still going to be the most cost efficiency model option in the world for, you know, for future for a long time.
+So now we have Chinese model labs, European model labs, and you mentioned XAI.
+So for Hammett, how do you evaluate these AI labs and the opportunities for AI companies globally?
+Yeah, I mean, look, it's actually really hard.
+If you don't know what you are really looking for, it's very hard to really get conviction.
+I think, like I said earlier, right, we are going through this phase where certain things are more important.
+They get more important or less important over time.
+Two years ago, I mean, this is one of the most competitive categories that most investors have ever seen in the world.
+Like, period, in the last 50 years, there's never been a competitive space as competitive as this is.
+Two years ago, when we were looking at the model layer, maybe two, three years back,
+I think what mattered most is who's got the best benchmarks.
+Because, you know, at that point, what the world was looking for is if I've got the smartest AI tokens,
+if I've got a genius in a bottle, I can shape it, I can find it, I can trade it to do whatever else.
+This, you know, human-like intelligence, and whether people think about AGI in very different ways,
+my view is an AGI would be an IQ of 98.
+It will make similar mistakes as humans do, but it will have the intuition that humans also do.
+And then you take this 98 average human IQ model, and you train it on mathematics and make it 150 on maths.
+You take it on bio, you make it 150 on bio.
+You train it on agentic stuff, and it becomes, you know, the best agentic model ever.
+So, at that point, the idea was to just make the most intelligent token output model for the least amount of dollars per watt.
+And the way to prove that was just benchmarks.
+So, most of these companies, the entire brand strategy was just to beat the benchmarks.
+And, of course, you can give it in many ways, and in the beginning people were not, and over time people were.
+But then the frontier was there, and that's where the evaluation was also focused on,
+can you really build the most intelligent models or not.
+Today, that layer is going to get commoditized.
+We completely see this happening, if you just look at the Minko's release from yesterday.
+You know, it's one of the strongest models, but the gaps between the previous generation and next generation is shrinking.
+And that's obvious, I mean, that has to happen.
+You are reaching the asymptote on intelligence, and beyond a point, every 1% improvement will require $10 billion,
+and another 1% will then require $100 billion.
+Right?
+So now, if you are looking at a model layer now, I think the big ones are going to get bigger.
+This is how commodity layers work.
+They work on pricing, not performance differences.
+And pricing, who can drive prices down lower?
+People who got the gap table for it, like in the Sval or OpenAI or XAI or Anthropink,
+or people who have got the balance sheet for it, which is the big companies, the Mena, the Facebook,
+the Googles and the Microsofts and so on.
+Those are the two people that actually win the model layer of the commodity scale,
+and you want it to be commodity so the value moves upstream.
+Today, if you are looking at a new model company, you've got to have some sort of an edge that you have the ability to build the scope problem,
+into the scope problem, because the scale problems, this baseline model will be able to train and then solve everything in scale.
+The scope problem is very hard.
+So we are looking at a lot more on physical world model companies.
+We are looking at a lot on bio, material sciences, mathematics, physics and game simulation.
+That's where the value is, because the token output looks very different.
+The intelligence curve that you are climbing the hill on, it looks very different from the curve that you have to climb the hill on,
+for the baseline board models.
+So that's how we are evaluating on the model side.
+But frankly, it just goes way beyond that.
+You have to look at the teams that are being put to work in these companies.
+To look at the comparables from the 1920s.
+When Ford came up with the car, his entire budget proposition was,
+look, I will give you any color you like as long as it is black.
+You had to scale that business really well.
+But when GM came up, the entire car wave was moving from an extractive phase,
+where the difference was, you have a car I don't, I want a car, too, I've got a better car.
+My car has been driven by James Bond in movies.
+It was a more of a go-to-market game.
+It was not about having the car or not having, but it was having a car with a V6 versus a V4.
+A better looking pain.
+So GM's entire value proposition was not that, you know, the best car.
+It was like, what do you call, almost planned obsolescence.
+Every two years, you'll make obsolete all the styles of the cars and you bring new ones in.
+That's the war that he wants.
+He was much more go-to-market and brand-centric than he was research and development-centric.
+So we look at these two things in conjunction.
+Where are we in the cycle and what kind of teams and playbooks will win that cycle is what we really care about.
+I like cars.
+So the analogy is like in the air world, maybe Anthropik and Open Air, they're selling Rolls-Royce and like we are selling Mercedes-Benz.
+In real life, more people are buying Mercedes-Benz, but in the air world, still, most people are buying Opus and GPT.
+So how do you see the battle between open and closed version?
+Yeah, look, I kind of think, I love that analogy, but I think another analogy is that between a Swiss Army knife and a specialist tool.
+So if I have a rough idea, I want to do a POC, I've got a hypothesis.
+You know, a Swiss Army knife gives me a lot of flexibility in what I build.
+It's not necessarily the most efficient approach, but I'm going to get there.
+But kind of once I'll prove it out that this use case or this value proposition or this high hypothesis makes sense,
+I'll start to optimize it using specialist tools.
+And I think that's really where the likes of a Minimax or a Mistral comes in,
+because we're looking to build very specialized models that can do very specific things very efficiently.
+And then I think the level beyond the specialist tool is when you actually look at the artist or the actual user of the tool.
+And that's where I think it's so important that when you look at these models,
+it's how can I get that enterprise context into the specialized tool to deliver that outcome.
+So as we talked about AGI, the way that we kind of see it is there'll be multiple domains where superintelligence is possible.
+Like it's not a general all purpose thing.
+I think there's a lot higher chance that in 12 to 18 months, you'll be able to have superintelligence performing a lot of the functions of a traditional call center.
+But in 12 to 18 months, I think it's far less likely that you'll have some sort of AI system doing advanced brain surgery.
+Like the technology is just not there and there's still so many steps to go.
+So when I look at the way that we're going to compete with, I think the more general, very powerful, the general purpose models,
+it's how can we specialize that knowledge, how can we make it more efficient, and how can we take the enterprise context into it
+so that organizations can actually develop a genuine mode.
+Simply, you know, subscribing to an API to a very powerful general intelligence without in building it with your enterprise context is at a mode.
+It's just a temporary productivity improvement.
+So that's kind of like the frame that we take in looking at this challenge.
+So also for me, Max, because like you have open source version, but somehow like you have business version, right?
+Like for like M2.7 and M3, you somehow rethink about your open source or open way strategy.
+So how do you assess the opportunities for open source models?
+Yeah, of course. So for me, Max, we have like open source models and also like closed source models for our LLM.
+So starting from M2 and 2.1 and 2.5, 2.7 and now M3.
+They are all like open source.
+But for our video generation, speech generation and music generation, they are actually closed source models.
+I would say that, you know, people are still seeing that closed source models are actually, you know, leading and defining the new frontier capabilities of each models.
+But we do see a huge demand for, you know, deploying all this open source model in different regions and different countries, you know, especially like in APAC.
+For many Southeast Asian countries, people have strong demand for open source models, which are deployed in their, you know, local data center for their local privacy use cases.
+And we do see a huge demand for that if you have like open source version that can definitely improve the, you know, adopt, adoptiveness of your model to serve all these countries with very strict local deployment requirements.
+But when, you know, if a company or if a client, they want to access the frontier model in the most fattest way, for example, when we launched M3,
+it's, you know, the first version we provide is, of course, like the cloud based.
+So if you want to access these new capabilities in, you know, in the earliest time or even with the early access.
+And, you know, to integrate this new model into your AI native product or workflow, it's always the best way to use the cloud based version of this closed source version.
+So this can help you, you know, you know, redirefine your workflow or your AI native product in the most timely manner.
+But in the long run, we see that there is, you know, space for open source and also close sourced model to exist at the same time to serve the different use case or even the same client.
+So we do see opportunities in both of these cases.
+And for Minimax, we provide all these different options to, you know, try to meet any demand of our client.
+So if you want like cloud based service, so we have our models, our models on our API platform.
+But we also have the self-employment version of our LLM and also TTS model.
+We also send technical support like the FTE engineer to help you to, you know, bring out the best of those open source models.
+What's your take on open source?
+Yeah, I mean look, I think both models could coexist but there is not enough discussion that is happening around the world on why should there be an open source alternative.
+Right, what is the importance of that?
+Look at the end of the day, in the business model, there is a business model part of this discussion and there is a philosophical angle, right?
+If you philosophically want AI to be available to all and to do good for everybody, you actually want the fundamental layers, the intelligence to be commoditized.
+You want it to not be controlled by just a handful of private corporations selling it at the highest price to everybody, right?
+You don't want it to be, this is the philosophical view, it could happen that way, you know, but the philosophical view should be that it should be more commoditized.
+And you don't want oil to be, by the way, commoditization does not mean it does not have value, it does not mean it will be cheap or free.
+It just means that it is fungible and intelligence from model one is no different from intelligence from model two.
+Oil from gas station one is no different from oil from gas station two.
+It's more price versus performance.
+That's what commoditization of the layer means.
+And you want it to happen for the benefits to go to everybody and the fastest way to commoditize the model layer so the value goes upstream and gets more distributed is through open weights and open source.
+That means everybody controls the intelligence, everybody can tune it, shape it.
+If you don't do that, it can still get commoditized.
+Oil is controlled by a few countries, a few companies, it is still a commodity, but it takes longer.
+But it takes longer.
+So the fastest way to commoditize the model layer is through open source and open weights.
+The challenge with open weights and open source, which I think companies that are taking that, because right now open weights and open source is a marketing strategy.
+The moment you have something to protect in terms of model boats, you want to take it private.
+That's what we have seen.
+But the challenge with open weights and open source is the business model.
+If you are selling an open weight model as a model, as a SOTA model, you're going to have to be pricing it on tokens.
+There is no other way people want to consume intelligence unless it is on tap.
+You want to open the tap, it comes to you, you fill your glass, you drink it, you're happy.
+You want that business model, you want to fit into the business model.
+The only way to make money from a token-backed business model is if you own the infrastructure.
+You can't just sell it, you can't be selling water and that's it.
+You can't be, I have a pond, I got good water, come buy my water, you can't make good money with that,
+because the distribution is too expensive.
+You don't control the tap and the houses, right?
+So you have to go all the way down to the GPU energy layer, land, property, everything,
+to be able to make money on the token-backed business model.
+Which is where a lot of the challenge in open source companies, open weight companies, is going to be.
+They will sell, they will water-based SOTA, they will be three months behind.
+Six months ago they were six months behind, today they are three months behind.
+That gap is going to reduce as the model-related commoditizes, the gap between open weights and closed will reduce.
+People will stop caring about the gaps even though three months is no longer as interesting as this is one-tenth the price.
+The question is can you make money on open source without owning all the layers below the open source?
+I don't think you can. I don't think you can.
+Jeff, so you measure specialized tools.
+So what people are actually doing around Mistral models, what are your killer features?
+Can you share some of these?
+Yeah, sure.
+So, and by the way, I'm going to follow up on Emmons perspective and I think you are fairly correct when you look at open source technology.
+The way to monetize it is actually to win the full stack from the power, the GPUs, the inference scene and the harnesses that sit on top of that.
+So absolutely quite aligned that that's a very solid path forward when it comes to open source technologies.
+In terms of kind of where we're looking at, definitely, I think as Hemant also mentioned, we're looking at making advancements in material science.
+So we just announced the acquisition of a company called Emmy around about three weeks ago.
+Emmy specialized in surrogate modeling.
+So one of the most complex or time consuming processes is actually the time it takes to run a simulation.
+When you create a digital twin, Emmy makes it 10 to 100 X quicker to have a reasonable fidelity simulation using surrogate modeling that will really help the design process.
+So that's the first thing we're going to go quite heavily and continue our partnership that we started with ASML and to specialize in high tech manufacturing.
+The second thing is, yeah, there's some robots running around our office.
+So moving into VLA's and VLM's and really thinking how we can solve the problem of physical AI.
+This domain hasn't been solved yet.
+There's a lot of different opinions going around on how to best solve physical AI, because you have to decide how much of the stack do you actually want to own?
+Do we want to own the actual production of the robots? No.
+Do we want to actually own the fine grain manipulation navigation, etc.
+Maybe not, but maybe the control and reasoning of how embodied AI works is something that Mistral is looking quite, spending a fair bit of time looking into.
+And definitely that move towards being an Omni model.
+So at the moment, the best way to interact with AI shouldn't be through a little chat interface.
+I think humans speak and it's the best way to communicate.
+We see it's a good way of communicating.
+So looking at what we can actually do from specifically the voice domain, the visual domain and creating this Omni model will create a lot more natural interfaces with AI.
+So that's another area that we're kind of focused on.
+But all of this is really backed on deep partnerships with companies that have enough data to create a little bit of a moat and a bit of a differentiation.
+So that's kind of what we're betting on.
+Physical AI, science AI, and Omni model.
+And for MediaMax, I think you're more agentic, right?
+So in terms of agentic, what actually is a myth for MediaMax models?
+Yeah, so it's a very broad definition of agentic actually.
+And we do see a range of very different partners who are working on it.
+And this year, we do see, so when we define agentic, we are actually talking about the agents that can handle the real-world tasks across all their productivity,
+daily white-collar tasks.
+But also, like, your personal agent, which also have some very high EQ that can assist your daily life and provide AI companion to you.
+But this year, we do see there are many different aspects that grow quickly.
+For example, with our new LLM, M3, M3 Auto, it actually has great computer use and also browser use capabilities.
+So we do see some AI native partners, companies with great browser use case or computer use agents.
+They are actually using M3 to explore the new boundaries of their products.
+And also, we are trying to, you know, continue to improve the visual understanding capabilities of our agentic capabilities.
+For example, now M3 can actually handle video understanding.
+So this year, we do see many, you know, emerging, like video agent products.
+Yeah, so they are actually combining the agentic tools.

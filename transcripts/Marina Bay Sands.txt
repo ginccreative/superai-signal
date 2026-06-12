@@ -1,0 +1,298 @@
+How much do we need to think about this?
+Inside the tech industry therefore, those companies are looking at the risks of their business and the size of the opportunity.
+So we've had these quotes from all of these companies saying basically the risk of missing this is bigger than the risk of over-investing.
+And that investment is certainly pretty substantial.
+So this year those Bitfall companies will spend something like $700 billion.
+That's their guidance, although the numbers will probably go up in the course of this year,
+up from about $400 billion last year.
+Telecom's industry is about $300 billion.
+Oil and gas, probably a trillion depending on how you break it up.
+So these are pretty big numbers.
+This is what big global capital intensive industry spent.
+Something like a third of that drops through to Invidia, which can't really keep up.
+These are quarterly numbers and they're accelerating up and to the right,
+leaving Invidia far behind heading for $100 billion a quarter if nothing slows down.
+And that in turn means the semiconductor industry is seeing an unprecedented sell-out in revenue
+because of course that flows through to things like some like memory as well.
+This has historically always been a cyclical industry.
+But if this is another cycle then it's certainly a bigger cycle.
+And so that drops through to the CapEx from semiconductor firms in this part of the world,
+particularly to SMC and then Samsung,
+substantially increasing their CapEx this year.
+Now the thing that sits at the back of all of this, of course, is cash flow from those big,
+giant tech companies who could afford this.
+Although not necessarily.
+We're starting to run into financial gravity with Meta and Microsoft and then Alphabet
+pushing towards or past 50% of their revenue going on CapEx this year,
+which is why we saw last week Alphabet raising $85 billion in equity.
+Meta apparently considered the same.
+And then there's all sorts of structure.
+So SPVs and debt and leasing and off-balance sheet vehicles of various kinds to try and structure
+how you can pay for all of this stuff.
+Meanwhile, there's this little company called OpenAI that's been trying to join the club.
+Various eye-catching announcements of gigawatts and trillions and numbers
+that don't necessarily seem to have translated into any actual construction yet.
+And of course because it doesn't have the cash flow that those big, four companies do,
+and that's all on other people's balance sheets and this wonderful, very circular revenue.
+Anyway, OpenAI would like to join the club.
+And of course the challenge is that it's not actually very easy to spend that much money that quickly.
+So we have bottlenecks and GPUs and in-memory.
+Most places that have power are backed up multiple years, access to power equipment and gas turbines
+are backed up multiple years.
+And then there's a growing political backlash particularly in the USA around data centers.
+So there's a sort of a pig in the Python problem that you can't actually spend this money this quickly
+which gets you to people like Microsoft saying it's just been impossible to build this capacity fast enough.
+Now, as I think most people in the room will know, the thing that's really driven this,
+the thing that's accelerated enormously this year, has been agentic coding.
+And so, and Swapic has reported this quite unprecedented surge in their revenue run rate.
+So be a little bit careful here to compare these because one is net and one is gross.
+But clearly there's an enormous well-in-law to suddenly spend on this
+which drives an enormous amount of other consequences in terms of both capacity and of course spending.
+So Uber managed to spend their entire annual budget for AI in the first quarter driven by that surge in usage.
+A whole bunch of other companies have similar kind of questions.
+And so this kind of creates a problem because we have, at the moment, a huge disequilibrium.
+We have explosive demand growth which is far ahead of supply.
+On the other hand, we have inference efficiency growing 50, 100, 200X per year depending on who you can count it.
+We have that trillion dollars of capex coming down the pipe.
+We don't know what the next model will be, what the next usage model will be,
+whether there will be edge or open source or what the asset lives are going to be.
+And of course it's kind of worth pointing out that all of this demand is only being driven by product market fit encoding
+which is actually a pretty small market.
+Imagine what would be going on if we had product market fit with something that was actually popular.
+And then of course it's building the next front end model every six to nine months
+which drives the whole thing more and forward again.
+Now, there's kind of an interesting comparison I think to make here
+which is to get back a look at what happened when mobile data started working in about 2010
+which is that the operators have given people flat rate data on the presumption of one kind of usage
+and then people got iPhones and iPhones got 3G and then they started watching video
+and so the network started collapsing because people were using it far more.
+And that's more or less exactly what's been going on in the AI and the 4G and Gemini in the last couple of months
+as suddenly they have to scramble to change their pricing scheme to reflect new pounds of usage.
+Now, Sam Altman said a couple of weeks ago that he thinks we're going to get to a future where intelligence is a utility like electricity.
+We buy it on a meter, everyone pays for it by the day.
+The challenge for that model should become apparent if you go back again and look at what happened in mobile
+where mobile data has grown one and a half to two thousand times in the last ten or fifteen years
+and the stocks have gone nowhere.
+There's a trillion dollar industry that doesn't make a very good return
+and all the value capture and all the cool stuff is built by somewhere else.
+And so there's a challenge selling a commodity and expecting to capture value from it.
+And it does look at the moment like models adhere to these commodities.
+Now, this is kind of a challenging statement because you use one and you use the other and they change all the time
+and you think this one's better than that one.
+But there isn't any sort of fundamental reason why any of these companies is going to have a sustainable lead over the other.
+They're all building with the same data, with the same technologies, with the same chips, the same infrastructure.
+There's no network effect. There's no fundamental path that one model can be completely different from all of the others.
+And so that gets us to a question of what this equilibrium is going to look like when everything settles down.
+Because the software industry historically was capital light. It had network, but it had network effects.
+And so that meant you got monopolies and then you got a high margin business.
+Microsoft used to sell you a one dollar CD and a ten dollar box for two hundred dollars.
+But large agro's models are capital intensive. They don't appear to have network effects.
+They do appear to be commodities and businesses that are commodities without network effects tend not to have high margins.
+So there's a kind of primary question here. Do LN apps have pricing power?
+Can they capture value and use cases further up the stack or are they just infrastructure?
+And I think the kind of provisional thesis that I would propose at the moment is to put up a building box on the table and see where they lead you.
+Which is that first of all chat seems to be a really bad user interface.
+It works very well for certain kinds of use cases.
+But most people for most things that they do are going to be something that looks more like an app.
+It helps them work out what they do.
+Labs clearly aren't going to be able to build all of those.
+They don't seem to have network effects. They seem to be commodities.
+And so the implication therefore is that the models themselves will be infrastructure.
+Potentially very large, very expensive infrastructure, but still infrastructure.
+And the innovation moves up the stack into deployment, into operational change in other places.
+So I'll talk a little bit about what that might mean, how that might work.
+Firstly, thinking about deployment.
+One answer might be, well hey, everyone's already using this.
+OpenAI has 900 million WC activities.
+It's all they have. They haven't actually given a number since the end of last year.
+Because they're embarrassed by it. Of course, that's because they have more competition now.
+But if you dig into those numbers, what you see is that usage is kind of a mile wide and an inch deep.
+So even in really kind of core early adopter demographics, at least as many people are only using this every couple of days or every couple of weeks as they're using it every day.
+And when you look into adults in the workplace overall, far more people say, well it's very cool, I might use it next week.
+So people have not made this a daily habit.
+You see that even more if you dig into individual industries.
+Even in the tech industry, there are more people who are using this once a month or once a week than are using this every day.
+And again, this is kind of a very glass half full, glass half empty kind of chart.
+Because on the one hand, this is great growth. On the other hand, what kind of growth is it?
+And I think in kind of a useful comparison to think about here, if you go back and look at another transformative technology, which is a spreadsheet.
+So this is an Apple II running Visicalc, which was the first successful software spreadsheet.
+The whole computer with a monitor and the printer and the disk drives cost, I think, about $12,000 or $13,000 adjusted for inflation.
+And if you were an accountant and you saw this, it was life changing. You had to have this.
+Because this thing could do a week of work in half an hour.
+But if you were a lawyer and you looked at this, you would say, well that's very cool and my accountant should see this, but that's not what I do all day.
+I don't do spreadsheets. If you give me a wordpress, I say that I will buy, but a spreadsheet, I don't know what I would do with this.
+And that I think is where most of those weekly and monthly activities are when they look at Claude or ChatGPT or Gemini.
+They say, well that's very cool. I'll think of something to do with it tomorrow. I used it for something last week.
+But there's a struggle to get deeper use. There's a struggle to actually change everybody's lives and the way that people work.
+And there's a kind of a common pattern here for how this always tends to work, which is to begin with, you do the old thing more.
+You use this for the old tasks. You make the new tools fit the old tasks.
+And it takes longer to work out things that are actually only possible with the new technology. It takes longer to build new things and then of course maybe to disrupt.
+That's what you see if you look at usage data. If you ask CFOs and CEOs, what they say is, well the stuff that's working so far is the stuff that's kind of easy to deploy.
+And if you think that's easy to work out, you would use it for that. But it's harder to find that on the P&L. It's hard to find better productivity or better data analytics in EPS numbers.
+And the stuff that are easier to measure that show up in EPS and the stuff that are harder to deploy take longer because like they force their hard to, of course they take longer.
+If you push back again to look at industries, then what are those places where this is easy to do work? First, well, analytics, productivity, marketing, customer support,
+automation of point solutions and specific problems inside many back offices. And then of course software development, which is the thing that everyone has
+everyone in the Valley running around with their hair on fire this year. There's kind of a representative quote from Mark Zuckerberg.
+And this is what pretty much everybody in the Valley will tell you now, that stuff that used to take a bunch of people a bunch of time is now many fewer people much quicker.
+And so this has people talking about some kind of generational change in computing. I think it's kind of worth pointing out that we've had generational changes in computing before.
+These are two ads from the mid-1980s that say no one will have to write code anymore. This will write your software for you.
+And the funny thing is it kind of happened. We've had successive waves of things that make it easier to make software.
+And so if you look at what the software install base looks like today, typical big company, I think, can be kind of putting you the software could be put into three categories.
+There are the horizontal big iron systems, ERP, HCM, Salesforce, SAP, Oracle, et cetera, Workgame.
+And then there are hundreds and hundreds of vertical apps. Typical big US corporation today uses four to five hundred SaaS applications.
+And then hundreds of thousands or many thousands of individual apps that they build or port or deploy over the last 20 years.
+And then you've got this kind of intermediate space of Excel and email and shared folders and network drives.
+And we ask ourselves, well, what's the right way of solving this problem?
+And the answer is that these tasks are with moving back and forth between these.
+A couple of years ago, I spoke to a consultant.
+He said half his jobs were moving people from Excel to a database and the other half were the other way around.
+And now we lay AI into this and it moves all of those things and accelerates them some more.
+And so again, there was a building blocks to think about here.
+That clearly this makes software much cheaper and much faster.
+It could do new stuff.
+And that produces new margin structures, new competitive threats.
+Some companies would go out of business.
+Some use cases would get unbundled.
+There'll be a lot of swirl.
+But the more interesting question is how far this replaces software and how much it makes new software
+or different kinds of software doing different things.
+Here we have Steve Jobs kind of pointing out the obvious, which is that most people are tool builders.
+Most people can't just take a piece of technology and work out what to do with it.
+You need to create something and give it to them.
+And so you need to build software.
+You need to think about something that manages the blank screen, manages the jagged frontier,
+the unpredictability of what these things can do.
+And then more fundamentally, you kind of need to work out, well, does this go at the top of the stack or the bottom?
+Should it sit at the top of your stack looking at all of your systems and synthesizing things across many different places?
+Or does it provide features inside existing pieces of software?
+And again, the answer to that is probably yes, all of those things.
+How would you work out what that looks like?
+Well, you can go and hire Accenture.
+You can go and hire your IT systems integrator.
+You also go and talk to a consultant or maybe your shareholders come and talk to you about how you should build this.
+Because guess what?
+Like completely redesigning how a big company does something is not an easy thing to do.
+And there are professional services firms whose entire industry, whose entire business is based on that.
+You do a bunch of pilots.
+And again, some of those pilots work, some of them don't, which is why you call them pilots.
+And again, those are concentrated in software, customer service and marketing.
+And then every startup in the world is now focused on trying to do this too.
+This is why startups exist.
+They exist to unbundle Google or unbundle SAP or unbundle Excel and now unbundle chat ebt and turn that into a product.
+And so we've got this coming wave of software and tools and use cases in a pushing in every direction, bundling and unbundling everything.
+But then there's a more basic question, which is, well, that's all great, but does this actually change anything for my company?
+Or is this just loads more software?
+I think the challenge here is that it's kind of hard to make predictions, especially about the future, especially at this stage,
+when you're so early in the industry and everything is unsettled.
+It's very easy to say what's going to happen in mobile in 2015.
+It was much more difficult to say what was going to happen in 2005 or to talk about what was going to happen to the Internet in 1997.
+What would you have predicted? You've got some of it.
+But Google didn't exist. Mark Zuckerberg was in junior high school.
+Jeff Bezos sold books. It wasn't clear how all of this was going to work.
+What I think we can say, though, is we can think about automation.
+So every previous web of automation let you automate anything that you could describe in logical steps.
+AI lets you automate anything where there's enough training data and where verification is scalable.
+And that's not everything, but it's a bunch of important, useful things.
+So if you can automate something, what happens?
+Well, that may just be twice the last history.
+If you make it cheaper to do something, do you do the same for less money?
+Or do you do more for the same money? Or do you do more for more money?
+But push that further. What tasks used to be expensive that now become free?
+Maybe was that cost-based barrier to entry that protected you from competition?
+And what things would just completely cost-prohibitive that no one even thought about that were impossible that now become cheap?
+The extreme case is that sometimes the job is just a task that gets automated away.
+There used to be a job called an elevator attendant because elevators didn't have buttons.
+They had an accelerator and a brake, and you drove them to the floor.
+And then that got automated away.
+More often, though, the job changes.
+So we spent the whole of the 20th century automating accounting, and the result was more accountants.
+Partly because that unlocked demand for more work, but also because the job changed.
+The thing that used to take a week took 30 seconds, so you did other stuff that you couldn't have done before.
+And sometimes when you automate something, everything else changes around it in unpredictable ways.
+This is a child about barcodes.
+So in the mid-1970s, the U.S. grocery industry deployed barcodes, the DPCs, and they did it to save money at checkout.
+But the result was that now they have an accurate record of their inventory.
+And so that meant you could carry less inventory and carry way more products and make more money, or cut your prices, and that produces Walmart.
+And so just automating that simple process changes the structure of the industry.
+I think it's useful to think about what that did to a bunch of industries, or the Internet did to a bunch of industries here,
+where you had industries that had some kind of physical thing that wasn't actually the business.
+So newspapers didn't think of themselves as printing companies or light industrial companies.
+Record companies didn't think of themselves as making little pieces of plastic, but that was the business.
+And the Internet broke those apart, and that removed the barrier to entry.
+So we should ask the same question now.
+If we're going to be able to automate anything boring, what industries need that as a barrier to entry?
+What industries are based on that?
+What can you split apart and move into different industries?
+Meanwhile, again, pushing further, what is it exactly that we can automate with this stuff?
+I always used to say that AI gave you infinite interns.
+But what kind of intern?
+So, and this is my question, what was it possible that now becomes cheap?
+It was impossible to listen to every phone call and tell me if the customer is angry.
+That's one kind of automation.
+But another kind is to say, listen to every single call, and then you'll notice stuff that no person could ever have noticed before.
+It's a very different kind of automation.
+Practical implication of that kind of shift in abstraction is to think about e-commerce and advertising.
+I always think that Google and Amazon and Meta don't really know what they sell.
+They know it's a scoop.
+They know the words you've typed in around it, but they don't know what the products are.
+And they don't know why anybody buys them.
+Here's Mark Zuckerberg again.
+They know that people who bought X bought Y, but they don't know what X and Y are, and they don't know why people buy them.
+And now LLMs will be able to understand what that thing is and why you cared about it, and what else people might buy.
+Or at least understand it at a different level of statistical correlation.
+Which gets you to different kinds of questions.
+Like, you go from, here's a picture of a code, what is it, to look at my Instagram and suggest some different codes to buy.
+Those aren't SQL queries.
+Those aren't things that you could have asked Amazon.
+Now, one should have a sort of brief reality check and point out that people in the Valley say no one uses Google anymore,
+but actually that's not helping more people shop.
+But, again, you can kind of ask, well, what are the new kinds of questions?
+The same on the enterprise.
+You can be on a Zoom call and not paying attention and ask, find me that data.
+But then you can say, listen to every Zoom call with every customer, and then look at our telemetry,
+and our customer analytics, and our churn data, and then tell me how we can change our pricing or our product to improve our churn.
+Those are questions you couldn't ask before.
+And so this gets me back to this question of how you split things apart.
+What's the hard part?
+Is the hard part writing the code or making the spreadsheet or delivering the scoop?
+Or is the hard part something else?
+It's the hard part knowing what you were supposed to be doing, knowing which task and why and what else you should do instead.
+I think that gets me to kind of some concluding thoughts.
+Firstly, to go back to this diagram, we should remember that all of these things that happened in the past were really fucking amazing too.
+Yes, AI changes everything and nothing like this has ever happened before, but that was true of all of those other things as well.
+We've also got some things that are amazing and have never happened before as we look at market valuations at the moment,
+where the two big model labs, never mind SpaceX, of which the least said the better, are each of them bigger than all tech IPOs in the last five years of the dot-com bubble.
+But if we go back in history again, how many times have we talked about automation?
+This is an IBM ad from the 50s that says that an electronic calculator will give you 150 extra engineers, which is basically every enterprise software pitched today.
+And indeed, if you go back and look through history, we've had successive waves of people getting very excited about automation as we've had new waves of technology.
+And now we have another wave of excitement about automation today.
+And when you go through those waves, you don't really know what's going to happen.
+It seems to me that every question I get about AI has one of two answers.
+The answer is either no one knows, or what will happen the last time that everything changed?
+And of course, the last time that everyone changed, no one knew either.
+We didn't really know how the internet was going to work or how mobile was going to work.
+There were all sorts of technologies and companies floating around.
+There were people who were very excited about that didn't work.
+And we should just presume that a bunch of stuff going around today will be something that doesn't work.
+Equally, when it does work, that doesn't necessarily change everything.
+So, ride shares completely change what we mean when we say taxis, but the impact of Airbnb was much smaller.
+That was just kind of an additive shift around the edges of the market.
+So, the impact of this stuff really kind of does depend on the market itself.
+And then one final observation I will make.
+This is a chart of recorded music revenue showing the impact first of downloads and then of streaming.
+And it seems to me that there's two things happening in this chart.
+The first half of the chart is people saying, well, what happens if I don't have to pay $50 to get that track?
+The second half is, what happens if $50 gets me all the music that there is in the world?
+That's a product, an idea that would have been completely impossible before the internet.
+No one even thought about doing that.
+And then the internet means that you can change the question.
+And so then just some final things to say here.
+We don't actually know how any of this is going to work.
+You never do when you're at this stage in the market.
+But you can ask, well, what are we built with this right now?
+And you can ask, does this break some fundamental assumption in the way we think about our business?
+And then you can just presume that all of this is going to change out of all recognition in the last two,
+next two and three and four years, just the way mobile did, just the way the internet did.
+And with that, I'll say thank you.
+All right, thank you so much, Benedict.
+Thank you so much, Benedict.
