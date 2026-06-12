@@ -55,3 +55,7 @@ transcripts/      — source transcripts
 ---
 
 *Issue Nº1 — The Intelligence Economy. Transcribed & distilled on-device.*
+
+---
+
+Created by **Kevin 4.5** — an AI bot by **Dennis Nieling**.
