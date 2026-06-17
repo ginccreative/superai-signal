@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The New SDLC With Vibe Coding — The Signal Nº2</title>
+<meta name="description" content="A digest of the Google × Kaggle whitepaper 'The New SDLC With Vibe Coding' by Addy Osmani, Shubham Saboo & Sokratis Kartakis." />
+<link rel="stylesheet" href="styles.css?v=2" />
+<style>:root{ --accent:#2563eb; }</style>
+</head>
+<body>
+  <div class="ribbon">Issue Nº2 · Whitepaper Nº1 · Day 1 of the Vibe Coding Series</div>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="logo" href="index.html"><span class="star">✦</span> THE SIGNAL</a>
+      <nav class="nav">
+        <a href="index.html">Issue 01</a>
+        <a href="issue-2.html">Issue 02</a>
+        <a href="wp-1.html" class="active">The New SDLC</a>
+        <a href="wp-2.html">Agent Lifecycle</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap article">
+    <div class="art-kicker fade">Whitepaper — The Economics of Building Software</div>
+    <h1 class="art-headline fade d1">The New SDLC With <em>Vibe Coding</em></h1>
+    <p class="art-dek fade d2">Generation is solved. As 41% of new code goes AI-generated, the
+      whitepaper argues the developer's real job is shifting from writing software to designing the
+      system — and the judgment — that produces it.</p>
+    <div class="art-byline fade d3">
+      <span class="who">Addy Osmani · Shubham Saboo · Sokratis Kartakis</span><span>Google · May 2026</span><span>· 49 pp</span>
+    </div>
+    <a class="transcript-btn fade d3" href="whitepapers/paper-1-new-sdlc.pdf" target="_blank" rel="noopener">
+      Read the full whitepaper (PDF) <span class="arr">→</span>
+    </a>
+
+    <figure class="art-hero fade d3">
+      <svg viewBox="0 0 1200 520" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1200" height="520" fill="#ebe5d6"/>
+        <g font-family="Archivo, sans-serif" font-weight="700" text-anchor="middle">
+          <rect x="70"  y="320" width="150" height="80" rx="8" fill="none" stroke="#a9c4f7" stroke-width="2.5"/><text x="145" y="355" font-size="15" fill="#1a1712">Autocomplete</text><text x="145" y="378" font-size="11" fill="#6f6e8f">~2021</text>
+          <rect x="300" y="270" width="150" height="80" rx="8" fill="none" stroke="#7da6f3" stroke-width="2.5"/><text x="375" y="305" font-size="15" fill="#1a1712">Chat</text><text x="375" y="328" font-size="11" fill="#6f6e8f">~2023</text>
+          <rect x="530" y="220" width="150" height="80" rx="8" fill="none" stroke="#4f86ee" stroke-width="2.5"/><text x="605" y="255" font-size="15" fill="#1a1712">Coding agents</text><text x="605" y="278" font-size="11" fill="#6f6e8f">~2024–25</text>
+          <rect x="760" y="160" width="170" height="80" rx="8" fill="#2563eb"/><text x="845" y="195" font-size="15" fill="#fff">Autonomous</text><text x="845" y="218" font-size="11" fill="#cfe0ff">~2025–26</text>
+        </g>
+        <path d="M145 320 L145 300 M375 270 L375 254 M605 220 L605 204" stroke="#1a1712" stroke-width="2"/>
+        <path d="M220 360 L300 310 M450 310 L530 260 M680 260 L760 210" stroke="#1a1712" stroke-width="2" fill="none"/>
+        <line x1="60" y1="430" x2="1010" y2="430" stroke="#1a1712" stroke-width="3"/>
+        <text x="80"  y="460" font-family="Archivo,sans-serif" font-size="13" font-weight="600" letter-spacing="2" fill="#6f6e8f">SYNTAX · more human effort</text>
+        <text x="1000" y="460" text-anchor="end" font-family="Archivo,sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#2563eb">INTENT · more machine autonomy</text>
+      </svg>
+      <figcaption>Each generation preserved what came before while raising the ceiling on what one engineer could do.</figcaption>
+    </figure>
+
+    <div class="art-grid">
+      <article class="prose">
+        <p>For most of computing history, programming has been an act of translation: understand the
+          problem in human terms, design a solution in abstract terms, then render it in syntax a
+          machine can execute. Every step adds friction — and that friction is now collapsing. The
+          whitepaper's claim is blunt: this is the biggest shift since high-level languages. As of
+          early 2026, <strong>85% of professional developers</strong> use AI coding agents, <strong>51%
+          daily</strong>, and an estimated <strong>41% of all new code is AI-generated</strong>.</p>
+
+        <h2><span class="n">01</span>A spectrum, not a slur</h2>
+        <p>"Vibe coding" — Karpathy's February 2025 coinage for fully giving in to the vibes and
+          forgetting the code exists — became so broad it lost meaning. The authors reframe it as one
+          end of a <em>spectrum</em> that runs to disciplined "agentic engineering." The real
+          differentiator isn't whether you use AI; it's how much structure, verification, and human
+          judgment surround the output. Telling a CTO your team vibe-codes the payment system should
+          raise alarms; telling them you practise agentic engineering — AI implementing under
+          human-designed constraints, with tests proving correctness — is a different conversation.</p>
+
+        <p class="pull">"The single biggest differentiator between the two ends is how outputs get
+          verified. Without tests and evals, the practice is always vibe coding."</p>
+
+        <h2><span class="n">02</span>Context engineering is the real skill</h2>
+        <p>Quality depends less on clever prompts and more on the quality of <em>context</em>. The paper
+          names six types — instructions, knowledge, memory, examples, tools, guardrails — and a central
+          trade-off between <strong>static context</strong> (always loaded; rule files like
+          <code>AGENTS.md</code>, <code>CLAUDE.md</code>, <code>GEMINI.md</code> — reliable but
+          expensive) and <strong>dynamic context</strong> (loaded on demand; efficient). The most
+          powerful pattern is <strong>Agent Skills</strong>: portable packages of procedural knowledge
+          loaded only when a task calls for them, so an agent stays a lightweight generalist that flexes
+          into a specialist on demand.</p>
+
+        <h2><span class="n">03</span>The factory model</h2>
+        <p>The mental model that ties it together: the developer's primary output is no longer code —
+          it's <em>the system that produces code</em>. A factory manager doesn't assemble every widget;
+          they design the assembly line and own quality control. Which leads to the paper's central
+          equation:</p>
+
+        <p class="pull">Agent = Model + Harness</p>
+
+        <p>The model is roughly 10% of what you experience; the other 90% is the harness — prompts,
+          tools, sandboxes, orchestration, hooks, observability. The proof is concrete: on Terminal
+          Bench 2.0 one team moved a coding agent from outside the Top 30 into the Top 5 by changing
+          <em>only the harness</em>, no model change at all. The everyday lesson: when an agent fails,
+          the instinct is to blame the model — but "most agent failures, examined honestly, are
+          configuration failures."</p>
+
+        <div class="fig fade">
+          <svg viewBox="0 0 760 280" xmlns="http://www.w3.org/2000/svg">
+            <rect width="760" height="280" fill="#f3efe4"/>
+            <rect x="30" y="24" width="700" height="74" rx="8" fill="#e8eefb" stroke="#2563eb" stroke-width="1.5"/>
+            <text x="50" y="52" font-family="Archivo,sans-serif" font-size="13" font-weight="700" letter-spacing="1" fill="#2563eb">DEVELOPER ZONE</text>
+            <text x="50" y="78" font-family="Fraunces,serif" font-size="17" fill="#1a1712">Define specs → design guardrails → review &amp; approve</text>
+            <rect x="30" y="120" width="700" height="92" rx="8" fill="#fff" stroke="#1a1712" stroke-width="1.5"/>
+            <text x="50" y="148" font-family="Archivo,sans-serif" font-size="13" font-weight="700" letter-spacing="1" fill="#1a1712">AGENT FACTORY FLOOR</text>
+            <text x="50" y="174" font-family="Fraunces,serif" font-size="17" fill="#1a1712">Planning agent → coding agent → tests &amp; verification → verified output</text>
+            <text x="50" y="198" font-family="Archivo,sans-serif" font-size="11" fill="#c0392b" font-weight="600">↺ failure feedback loops back to the planning agent</text>
+            <text x="380" y="250" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="16" fill="#6f6e8f">The developer's output isn't code — it's the factory that produces code.</text>
+          </svg>
+        </div>
+
+        <h2><span class="n">04</span>Conductor &amp; orchestrator</h2>
+        <p>The developer moves between two modes. As a <strong>conductor</strong> they work real-time in
+          the IDE, directing an AI pair-programmer keystroke by keystroke (Copilot, Gemini Code Assist,
+          Cursor, Windsurf). As an <strong>orchestrator</strong> they operate at a higher level —
+          defining goals, delegating to async, multi-agent background workers and reviewing results
+          (Jules, Cursor background agents, Claude Code). The orchestrator skill set is specification,
+          decomposition, evaluation, and system design — not syntax fluency.</p>
+
+        <h2><span class="n">05</span>The 80% problem</h2>
+        <p>Agents rapidly produce ~80% of a feature; the last 20% — edge cases, error handling,
+          integration, subtle correctness — needs deep context models often lack. Headline gains are
+          real (industry surveys cite 25–39%) but nuanced: a METR study found experienced developers
+          took <strong>19% longer</strong> on some tasks, the time spent verifying and correcting AI
+          output. The effective posture: use AI for what it's good at, and reserve your attention for
+          what it struggles with.</p>
+
+        <h2><span class="n">06</span>The economics: CapEx vs OpEx</h2>
+        <p>For leaders, the real metric isn't velocity but total cost of ownership. Vibe coding looks
+          cheap — low CapEx — but carries a heavy, compounding <strong>OpEx</strong>: token burn from
+          unverified prompting loops, a maintenance tax on inconsistent "spaghetti" code, and security
+          remediation. Agentic engineering flips it: higher upfront CapEx (specs, test suites, context
+          design) buys a dramatically lower marginal cost per feature. Context engineering becomes a
+          <em>financial</em> lever, and intelligent <strong>model routing</strong> — big models for hard
+          tasks, cheap ones for the routine — drives token cost down without sacrificing quality.</p>
+
+        <p>The same terminal workflow that makes a prototype now makes a <em>production</em> agent.
+          Google's <strong>Agents CLI</strong> bundles seven skills covering the full ADK lifecycle —
+          scaffold, code, evaluate, deploy, observe — and works with whichever coding agent you already
+          use, so the prototype on your laptop yesterday can serve real users today without a rewrite.
+          <a href="wp-2.html">(That's the hands-on companion in this issue.)</a></p>
+
+        <h2><span class="n">07</span>Intent as the new interface</h2>
+        <p>Three durable principles close the paper: <strong>structure scales, vibes don't</strong>;
+          <strong>AI amplifies your engineering culture</strong> (it multiplies strengths and weaknesses
+          alike); and <strong>the human role is evolving, not diminishing</strong> — the skills that
+          matter are shifting from implementation to judgment. Or, as the final line puts it:</p>
+
+        <p class="pull">"Generation is solved. Verification, judgment, and direction are the new craft."</p>
+
+        <div class="art-footnav">
+          <a href="issue-2.html"><span class="lbl">Back to</span>Issue Nº2 ←</a>
+          <a href="wp-2.html"><span class="lbl">Next</span>→ Managing the Agent Lifecycle</a>
+        </div>
+      </article>
+
+      <aside class="sidebar">
+        <div class="keybox fade">
+          <h4>The Takeaways</h4>
+          <ul>
+            <li><b>The numbers</b>85% of devs use AI agents · 51% daily · ~41% of new code is AI-generated.</li>
+            <li><b>The spectrum</b>Vibe coding → agentic engineering. The line is how outputs get verified.</li>
+            <li><b>Real skill</b>Context engineering — 6 context types, static vs dynamic, Agent Skills.</li>
+            <li><b>The equation</b>Agent = Model + Harness. ~90% is the harness, and it's your team's.</li>
+            <li><b>80% problem</b>AI nails ~80%; the last 20% needs human context. METR: 19% slower on some tasks.</li>
+            <li><b>Economics</b>Vibe = low CapEx/high OpEx; agentic = high CapEx/low OpEx. Route models.</li>
+          </ul>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Agentic Eng</span><span class="tag">Context</span>
+          <span class="tag">SDLC</span><span class="tag">Economics</span>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="wrap">
+    <div class="colophon">
+      <span>The Signal — Issue Nº2</span><span>Whitepaper Nº1 · Osmani, Saboo &amp; Kartakis</span>
+      <span>Created by Kevin 4.5 — AI bot by Dennis Nieling</span>
+    </div>
+  </footer>
+</body>
+</html>

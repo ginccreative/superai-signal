@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Managing the Agent Lifecycle — The Signal Nº2</title>
+<meta name="description" content="A digest of Google's codelab on managing the AI agent lifecycle with Agents CLI and ADK 2.0." />
+<link rel="stylesheet" href="styles.css?v=2" />
+<style>:root{ --accent:#0f9d58; }</style>
+</head>
+<body>
+  <div class="ribbon">Issue Nº2 · Whitepaper Nº2 · Day 2 — Hands-on Codelab</div>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="logo" href="index.html"><span class="star">✦</span> THE SIGNAL</a>
+      <nav class="nav">
+        <a href="index.html">Issue 01</a>
+        <a href="issue-2.html">Issue 02</a>
+        <a href="wp-1.html">The New SDLC</a>
+        <a href="wp-2.html" class="active">Agent Lifecycle</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap article">
+    <div class="art-kicker fade">Codelab — Building &amp; Shipping Agents</div>
+    <h1 class="art-headline fade d1">Managing the <em>Agent Lifecycle</em></h1>
+    <p class="art-dek fade d2">The hands-on companion to the series: how to scaffold, test, and deploy
+      production agents from the terminal using Google's Agents CLI and ADK 2.0 — without learning a
+      new SDK.</p>
+    <div class="art-byline fade d3">
+      <span class="who">Google Developers</span><span>Agents CLI + ADK 2.0</span><span>· Codelab</span>
+    </div>
+    <a class="transcript-btn fade d3" href="https://codelabs.developers.google.com/agents-cli-adk-lifecycle" target="_blank" rel="noopener">
+      Open the codelab <span class="arr">→</span>
+    </a>
+
+    <figure class="art-hero fade d3">
+      <svg viewBox="0 0 1200 520" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1200" height="520" fill="#ebe5d6"/>
+        <g font-family="Archivo,sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#1a1712">
+          <rect x="90"  y="210" width="150" height="90" rx="10" fill="none" stroke="#0f9d58" stroke-width="3"/><text x="165" y="262">Scaffold</text>
+          <rect x="320" y="120" width="150" height="90" rx="10" fill="none" stroke="#0f9d58" stroke-width="3"/><text x="395" y="172">Build</text>
+          <rect x="320" y="300" width="150" height="90" rx="10" fill="none" stroke="#0f9d58" stroke-width="3"/><text x="395" y="352">Evaluate</text>
+          <rect x="560" y="210" width="150" height="90" rx="10" fill="#0f9d58"/><text x="635" y="262" fill="#fff">Deploy</text>
+          <rect x="800" y="210" width="170" height="90" rx="10" fill="none" stroke="#2563eb" stroke-width="3"/><text x="885" y="262" fill="#2563eb">Observe</text>
+        </g>
+        <path d="M240 250 L320 175 M240 260 L320 345 M470 165 L560 245 M470 345 L560 265 M710 255 L800 255" stroke="#1a1712" stroke-width="2.5" fill="none"/>
+        <text x="600" y="60" text-anchor="middle" font-family="Archivo,sans-serif" font-size="14" font-weight="700" letter-spacing="3" fill="#6f6e8f">SEVEN SKILLS · THE FULL ADK LIFECYCLE</text>
+      </svg>
+      <figcaption>One install adds seven skills to your coding agent, covering scaffold → build → evaluate → deploy → observe.</figcaption>
+    </figure>
+
+    <div class="art-grid">
+      <article class="prose">
+        <p>If the Day-1 whitepaper makes the case that the developer's job is now designing the system
+          that builds software, this codelab is where you actually build one. It walks through the
+          complete <em>local development lifecycle</em> of an AI agent using Google's <strong>Agents
+          CLI</strong> and the <strong>Agent Development Kit (ADK 2.0)</strong> — part of Kaggle's
+          five-day intensive with Google.</p>
+
+        <h2><span class="n">01</span>One install, seven skills</h2>
+        <p>The setup is a single command — <code>uvx google-agents-cli setup</code> — which installs the
+          CLI globally and deploys seven domain-specific coding-assistant skills to
+          <code>~/.agents/skills/</code>. Crucially, it doesn't ask you to learn a new SDK: the skills
+          attach to whichever coding agent you already use (Claude Code, Codex, and others), which then
+          does the right thing at each step. Authentication runs through either a Gemini API key from
+          Google AI Studio or Google Cloud credentials for Vertex AI deployment.</p>
+
+        <h2><span class="n">02</span>Agents as graphs</h2>
+        <p>ADK 2.0 models an agent application as a <strong>graph workflow</strong>. A
+          <code>Workflow</code> and its edges orchestrate the flow; <code>LlmAgent</code> nodes handle
+          language-model tasks; Python <code>@node</code> decorators wrap custom logic; and conditional
+          routing branches on classification results. The codelab builds a customer-support agent to
+          make the pattern concrete — a router that classifies an incoming request and sends it down the
+          right path.</p>
+
+        <p class="pull">Describe what you want; the coding agent uses the skills to scaffold, code,
+          evaluate, and deploy — no new framework to learn.</p>
+
+        <h2><span class="n">03</span>A live local playground</h2>
+        <p>Development happens in an interactive playground: a chat interface where you talk to your
+          agent and <em>inspect tool executions in real time</em>, with automatic code reloading as you
+          edit. Automated code-quality checks run alongside. The stack is deliberately lightweight —
+          Python 3.11+, Node 18+, the <code>uv</code> package manager, Gemini models, and the
+          Antigravity IDE for assisted development.</p>
+
+        <h2><span class="n">04</span>From laptop to production</h2>
+        <p>The same workflow that produces a prototype produces the production agent. The codelab closes
+          by pointing at the next steps that turn a local experiment into a real service: structured
+          evaluation, cloud deployment to Agent Runtime, and production observability through Cloud Trace
+          and BigQuery — the substrate the Day-1 paper insists you build <em>before</em> scale, not after.</p>
+
+        <div class="art-footnav">
+          <a href="wp-1.html"><span class="lbl">Previous</span>← The New SDLC</a>
+          <a href="issue-2.html"><span class="lbl">Back to</span>Issue Nº2 →</a>
+        </div>
+      </article>
+
+      <aside class="sidebar">
+        <div class="keybox fade">
+          <h4>The Takeaways</h4>
+          <ul>
+            <li><b>Setup</b><code>uvx google-agents-cli setup</code> → 7 skills in <code>~/.agents/skills/</code>.</li>
+            <li><b>No new SDK</b>Skills attach to your existing coding agent (Claude Code, Codex…).</li>
+            <li><b>Graphs</b>ADK 2.0: Workflow + edges, LlmAgent nodes, @node logic, conditional routing.</li>
+            <li><b>Playground</b>Live chat, real-time tool inspection, auto code-reload.</li>
+            <li><b>To production</b>Evaluate → deploy to Agent Runtime → observe (Cloud Trace, BigQuery).</li>
+          </ul>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Agents CLI</span><span class="tag">ADK 2.0</span>
+          <span class="tag">Graphs</span><span class="tag">Deploy</span>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="wrap">
+    <div class="colophon">
+      <span>The Signal — Issue Nº2</span><span>Whitepaper Nº2 · Google Developers</span>
+      <span>Created by Kevin 4.5 — AI bot by Dennis Nieling</span>
+    </div>
+  </footer>
+</body>
+</html>
