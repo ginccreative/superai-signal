@@ -4,401 +4,319 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The Signal — AI Intelligence, Distilled</title>
-<meta name="description" content="The Signal — a boutique AI magazine distilling the most important ideas from conferences, whitepapers, and the frontier of the intelligence economy." />
-<link rel="stylesheet" href="styles.css?v=2" />
+<meta name="description" content="The Signal — a boutique AI magazine distilling the most important ideas from the frontier of the intelligence economy." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700;1,9..144,900&family=Archivo:wght@500;700&display=swap" rel="stylesheet" />
 <style>
-  /* ── Front page overrides ─────────────────────────────── */
-  :root { --accent: #2563eb; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  .front-ribbon {
-    background: #1a1712;
-    color: #f3efe4;
-    text-align: center;
-    font-family: var(--label);
-    font-size: .75rem;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    padding: 9px 16px;
+  :root {
+    --ink:    #1a1712;
+    --paper:  #f0ece0;
+    --serif:  'Fraunces', Georgia, serif;
+    --sans:   'Archivo', system-ui, sans-serif;
   }
 
-  .front-masthead {
-    border-bottom: 2px solid #1a1712;
-    padding: 28px 0 20px;
-  }
-  .front-masthead-inner {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-  .front-logo {
-    font-family: var(--display);
-    font-size: clamp(2.8rem, 7vw, 5rem);
-    font-weight: 700;
-    letter-spacing: -.03em;
-    color: #1a1712;
-    text-decoration: none;
-    line-height: 1;
-  }
-  .front-logo .star { color: var(--accent); margin-right: 4px; }
-  .front-tagline {
-    font-family: var(--label);
-    font-size: .78rem;
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    color: #6f6e8f;
-    margin-top: 2px;
-  }
-  .front-rule {
-    width: 40px;
-    height: 2px;
-    background: var(--accent);
-    margin: 10px auto 0;
+  html, body {
+    height: 100%;
+    background: var(--paper);
+    color: var(--ink);
   }
 
-  /* ── Issue grid ───────────────────────────────────────── */
-  .issues-grid {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 48px 24px 80px;
-  }
-  .issues-label {
-    font-family: var(--label);
-    font-size: .72rem;
-    letter-spacing: .22em;
-    text-transform: uppercase;
-    color: #9aa0a6;
-    margin-bottom: 28px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #e0d9cc;
-  }
-
-  /* stack on mobile, side-by-side on wide */
-  .issues-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 28px;
-    align-items: start;
-  }
-
-  .issue-card {
-    display: flex;
-    flex-direction: column;
-    border: 2px solid #1a1712;
-    border-radius: 6px;
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    transition: transform .18s ease, box-shadow .18s ease;
-    background: #f3efe4;
-  }
-  .issue-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(26,23,18,.14);
-  }
-
-  .ic-cover {
-    position: relative;
-    padding: 36px 28px 28px;
-    background: var(--ic-bg, #1a1712);
-    flex-shrink: 0;
-    min-height: 260px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-  .ic-number {
-    position: absolute;
-    top: 18px;
-    right: 20px;
-    font-family: var(--label);
-    font-size: .7rem;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    color: rgba(243,239,228,.5);
-  }
-  .ic-badge {
-    display: inline-block;
-    font-family: var(--label);
-    font-size: .68rem;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border: 1px solid rgba(243,239,228,.4);
-    border-radius: 2px;
-    color: rgba(243,239,228,.7);
-    margin-bottom: 14px;
-    align-self: flex-start;
-  }
-  .ic-headline {
-    font-family: var(--display);
-    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-    font-weight: 700;
-    line-height: 1.12;
-    color: #f3efe4;
-    margin: 0 0 10px;
-    letter-spacing: -.02em;
-  }
-  .ic-headline em { font-style: italic; color: var(--ic-accent, #93b4f5); }
-  .ic-sub {
-    font-family: var(--body);
-    font-size: .9rem;
-    color: rgba(243,239,228,.65);
-    line-height: 1.55;
-    margin: 0;
-  }
-
-  /* SVG art strip */
-  .ic-art {
-    background: #ebe5d6;
-    overflow: hidden;
-    height: 130px;
-    flex-shrink: 0;
-  }
-  .ic-art svg { width: 100%; height: 100%; display: block; }
-
-  .ic-body {
-    padding: 22px 24px 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    flex: 1;
-  }
-  .ic-meta {
-    font-family: var(--label);
-    font-size: .7rem;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: #9aa0a6;
-  }
-  .ic-contents {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .ic-contents li {
-    font-family: var(--body);
-    font-size: .87rem;
-    color: #4a4438;
-    padding-left: 14px;
-    position: relative;
-    line-height: 1.4;
-  }
-  .ic-contents li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--ic-accent2, #2563eb);
-    font-size: .8rem;
-  }
-  .ic-cta {
+  /* ── Masthead ───────────────────────────────────── */
+  .mast {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: auto;
-    padding-top: 14px;
-    border-top: 1px solid #e0d9cc;
-    font-family: var(--label);
-    font-size: .72rem;
+    padding: 20px 40px;
+    border-bottom: 1.5px solid var(--ink);
+  }
+  .mast-logo {
+    font-family: var(--serif);
+    font-size: 1.05rem;
     font-weight: 700;
-    letter-spacing: .12em;
+    letter-spacing: .04em;
     text-transform: uppercase;
-    color: var(--ic-accent2, #2563eb);
+    color: var(--ink);
+    text-decoration: none;
   }
-  .ic-cta-arr { font-size: 1.1rem; }
-
-  /* ── About strip ─────────────────────────────────────── */
-  .about-strip {
-    background: #1a1712;
-    color: #f3efe4;
-    padding: 42px 24px;
-    text-align: center;
+  .mast-logo .star { color: #2563eb; margin-right: 5px; }
+  .mast-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--ink);
+    margin: 0 28px;
+    opacity: .25;
   }
-  .about-strip-inner { max-width: 680px; margin: 0 auto; }
-  .about-strip h2 {
-    font-family: var(--display);
-    font-size: 1.5rem;
+  .mast-tag {
+    font-family: var(--sans);
+    font-size: .65rem;
     font-weight: 700;
-    margin: 0 0 12px;
-    letter-spacing: -.02em;
-  }
-  .about-strip p {
-    font-family: var(--body);
-    font-size: .97rem;
-    color: rgba(243,239,228,.7);
-    line-height: 1.65;
-    margin: 0;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #888;
   }
 
-  /* ── Front footer ────────────────────────────────────── */
-  .front-footer {
-    background: #f3efe4;
-    border-top: 2px solid #1a1712;
-    padding: 22px 24px;
-    text-align: center;
-    font-family: var(--label);
-    font-size: .7rem;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: #9aa0a6;
+  /* ── Newsstand ──────────────────────────────────── */
+  .stand {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px 20px;
+    align-items: stretch;
+    min-height: calc(100vh - 62px);
+    gap: 0;
   }
-  .front-footer span::after { content: '·'; margin-left: 20px; }
-  .front-footer span:last-child::after { content: ''; }
+
+  /* Each cover */
+  .cover {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 36px 40px 40px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    border-right: 1.5px solid rgba(0,0,0,.18);
+    transition: flex .35s cubic-bezier(.4,0,.2,1);
+    cursor: pointer;
+  }
+  .cover:last-child { border-right: none; }
+  .cover:hover { flex: 1.22; }
+
+  /* Hover overlay */
+  .cover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.06);
+    opacity: 0;
+    transition: opacity .25s;
+    pointer-events: none;
+  }
+  .cover:hover::after { opacity: 1; }
+
+  /* Cover 1 — dark */
+  .cover-1 {
+    background: #1a1712;
+    color: #f0ece0;
+  }
+  /* Cover 2 — deep navy */
+  .cover-2 {
+    background: #0c1929;
+    color: #f0ece0;
+  }
+  /* Cover 3 — muted / coming soon */
+  .cover-3 {
+    background: #2c2720;
+    color: rgba(240,236,224,.32);
+    cursor: default;
+    pointer-events: none;
+  }
+  .cover-3:hover { flex: 1; }
+
+  /* Top section: tiny masthead line */
+  .cv-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cv-pub {
+    font-family: var(--sans);
+    font-size: .6rem;
+    font-weight: 700;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    opacity: .45;
+  }
+  .cv-num {
+    font-family: var(--sans);
+    font-size: .6rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    opacity: .4;
+  }
+
+  /* Middle: accent line */
+  .cv-accent {
+    width: 32px;
+    height: 2px;
+    margin: 0 auto;
+  }
+
+  /* Bottom: title block */
+  .cv-bottom { }
+
+  .cv-kicker {
+    font-family: var(--sans);
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    opacity: .5;
+    margin-bottom: 14px;
+  }
+
+  .cv-title {
+    font-family: var(--serif);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -.03em;
+    font-size: clamp(2rem, 3.5vw, 3.4rem);
+  }
+  .cv-title em {
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  /* Read CTA (appears on hover) */
+  .cv-cta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 22px;
+    font-family: var(--sans);
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity .25s .05s, transform .25s .05s;
+  }
+  .cover:hover .cv-cta {
+    opacity: .7;
+    transform: translateY(0);
+  }
+  .cv-cta-line {
+    flex: 0 0 24px;
+    height: 1px;
+    background: currentColor;
+  }
+
+  /* ── Footer ─────────────────────────────────────── */
+  .foot {
+    border-top: 1.5px solid var(--ink);
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .foot-l {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: .8rem;
+    color: #888;
+  }
+  .foot-r {
+    font-family: var(--sans);
+    font-size: .6rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #888;
+  }
+
+  /* ── Mobile fallback ─────────────────────────────── */
+  @media (max-width: 600px) {
+    .mast { padding: 16px 20px; }
+    .mast-rule { display: none; }
+    .stand {
+      flex-direction: column;
+      min-height: auto;
+    }
+    .cover {
+      border-right: none;
+      border-bottom: 1.5px solid rgba(0,0,0,.18);
+      min-height: 42vh;
+      flex: none;
+    }
+    .cover:hover { flex: none; }
+    .cv-title { font-size: clamp(1.8rem, 8vw, 2.6rem); }
+    .cv-cta { opacity: .5; transform: none; }
+    .foot { padding: 12px 20px; flex-direction: column; gap: 4px; text-align: center; }
+  }
 </style>
 </head>
 <body>
-  <div class="front-ribbon">The Intelligence Economy · Distilled for People Who Build</div>
 
-  <header class="front-masthead">
-    <div class="front-masthead-inner">
-      <a class="front-logo" href="index.html"><span class="star">✦</span> THE SIGNAL</a>
-      <p class="front-tagline">AI Intelligence — Distilled</p>
-      <div class="front-rule"></div>
-    </div>
+  <header class="mast">
+    <a class="mast-logo" href="index.html"><span class="star">✦</span> The Signal</a>
+    <div class="mast-rule"></div>
+    <span class="mast-tag">AI Intelligence — Distilled</span>
   </header>
 
-  <main>
-    <div class="issues-grid">
-      <p class="issues-label">All Issues</p>
-      <div class="issues-row">
+  <main class="stand">
 
-        <!-- ── Issue 01 ─────────────────────────────────── -->
-        <a class="issue-card fade" href="issue-1.html"
-           style="--ic-bg:#1a1712; --ic-accent:#c0392b; --ic-accent2:#c0392b">
-          <div class="ic-cover" style="background:#1a1712">
-            <span class="ic-number">Nº 01</span>
-            <span class="ic-badge">Field Dispatch</span>
-            <h2 class="ic-headline">Signals from<br><em>SuperAI</em> 2026</h2>
-            <p class="ic-sub">Marina Bay Sands, Singapore — three of the conference's sharpest talks, distilled to what actually matters.</p>
-          </div>
-          <div class="ic-art">
-            <svg viewBox="0 0 500 130" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-              <rect width="500" height="130" fill="#ebe5d6"/>
-              <!-- Evans: bar chart -->
-              <g fill="#c0392b" opacity=".85">
-                <rect x="30" y="75" width="18" height="36"/>
-                <rect x="54" y="60" width="18" height="51"/>
-                <rect x="78" y="44" width="18" height="67"/>
-                <rect x="102" y="28" width="18" height="83"/>
-                <rect x="126" y="15" width="18" height="96"/>
-              </g>
-              <!-- Frontier: globe lines -->
-              <circle cx="270" cy="65" r="40" fill="none" stroke="#1f6f6b" stroke-width="1.5" opacity=".7"/>
-              <ellipse cx="270" cy="65" rx="18" ry="40" fill="none" stroke="#1f6f6b" stroke-width="1.5" opacity=".7"/>
-              <line x1="230" y1="65" x2="310" y2="65" stroke="#1f6f6b" stroke-width="1.5" opacity=".7"/>
-              <!-- Tegmark: fork -->
-              <path d="M400 120 L400 70 L355 20" fill="none" stroke="#c0392b" stroke-width="2"/>
-              <path d="M403 120 L403 70 L448 20" fill="none" stroke="#27408b" stroke-width="2"/>
-              <circle cx="401" cy="70" r="5" fill="#1a1712"/>
-              <circle cx="448" cy="20" r="7" fill="#27408b"/>
-              <circle cx="355" cy="20" r="7" fill="none" stroke="#c0392b" stroke-width="2"/>
-            </svg>
-          </div>
-          <div class="ic-body">
-            <p class="ic-meta">June 2026 · Singapore · 3 Dispatches</p>
-            <ul class="ic-contents">
-              <li>Benedict Evans — Are models just infrastructure?</li>
-              <li>Mistral, MiniMax & Lightspeed — Frontier after the benchmarks</li>
-              <li>Max Tegmark — The fork in the road</li>
-            </ul>
-            <div class="ic-cta">
-              <span>Read Issue 01</span>
-              <span class="ic-cta-arr">→</span>
-            </div>
-          </div>
-        </a>
+    <!-- ── Issue 01 ──────────────────────────────── -->
+    <a class="cover cover-1" href="issue-1.html">
+      <div class="cv-top">
+        <span class="cv-pub">The Signal</span>
+        <span class="cv-num">Nº 01</span>
+      </div>
 
-        <!-- ── Issue 02 ─────────────────────────────────── -->
-        <a class="issue-card fade d1" href="issue-2.html"
-           style="--ic-bg:#0d1b2e; --ic-accent:#93b4f5; --ic-accent2:#2563eb">
-          <div class="ic-cover" style="background:#0d1b2e">
-            <span class="ic-number">Nº 02</span>
-            <span class="ic-badge">Whitepaper Series</span>
-            <h2 class="ic-headline">The <em>Vibe&nbsp;Coding</em> Papers</h2>
-            <p class="ic-sub">Google × Kaggle ran a five-day AI Agents intensive. We read all four whitepapers so you don't have to.</p>
-          </div>
-          <div class="ic-art">
-            <svg viewBox="0 0 500 130" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-              <rect width="500" height="130" fill="#ebe5d6"/>
-              <!-- Spectrum: climbing boxes -->
-              <rect x="20"  y="85" width="52" height="34" rx="4" fill="none" stroke="#a9c4f7" stroke-width="1.5"/>
-              <rect x="100" y="68" width="52" height="51" rx="4" fill="none" stroke="#7da6f3" stroke-width="1.5"/>
-              <rect x="180" y="50" width="52" height="69" rx="4" fill="none" stroke="#4f86ee" stroke-width="1.5"/>
-              <rect x="260" y="30" width="58" height="89" rx="4" fill="#2563eb"/>
-              <path d="M72 102 L100 84 M152 84 L180 66 M232 66 L260 52" stroke="#1a1712" stroke-width="1.5" fill="none"/>
-              <!-- MCP hub -->
-              <circle cx="400" cy="65" r="30" fill="#f59e0b" opacity=".9"/>
-              <text x="400" y="60" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" font-weight="700" fill="#fff">MCP</text>
-              <text x="400" y="72" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" font-weight="700" fill="#fff">A2A</text>
-              <g stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="4 3" fill="none" opacity=".7">
-                <line x1="400" y1="35" x2="400" y2="10"/>
-                <line x1="375" y1="47" x2="343" y2="28"/>
-                <line x1="370" y1="65" x2="340" y2="65"/>
-                <line x1="425" y1="47" x2="457" y2="28"/>
-                <line x1="430" y1="65" x2="460" y2="65"/>
-              </g>
-            </svg>
-          </div>
-          <div class="ic-body">
-            <p class="ic-meta">June 2026 · Google × Kaggle · 4 Whitepapers</p>
-            <ul class="ic-contents">
-              <li>The New SDLC — Agent = Model + Harness</li>
-              <li>Agent Lifecycle — ADK 2.0 & Agents CLI</li>
-              <li>Agent Tools — MCP, A2A, the open standard</li>
-              <li>Agent Skills — Procedural memory for LLMs</li>
-            </ul>
-            <div class="ic-cta">
-              <span>Read Issue 02</span>
-              <span class="ic-cta-arr">→</span>
-            </div>
-          </div>
-        </a>
+      <div style="text-align:center">
+        <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" style="opacity:.18">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="#f0ece0" stroke-width="1.5"/>
+          <line x1="2" y1="20" x2="38" y2="20" stroke="#f0ece0" stroke-width="1"/>
+          <line x1="20" y1="2" x2="20" y2="38" stroke="#f0ece0" stroke-width="1"/>
+        </svg>
+      </div>
 
-        <!-- ── Coming soon placeholder ───────────────────── -->
-        <div class="issue-card" style="opacity:.5; cursor:default; pointer-events:none; --ic-bg:#2e2a22; --ic-accent:#b8b09a; --ic-accent2:#9aa0a6">
-          <div class="ic-cover" style="background:#2e2a22; min-height:200px; justify-content:center; align-items:center">
-            <span class="ic-number">Nº 03</span>
-            <p style="font-family:var(--display);font-style:italic;font-size:1.8rem;color:rgba(243,239,228,.35);text-align:center;margin:0">Coming<br>soon</p>
-          </div>
-          <div class="ic-body">
-            <p class="ic-meta">In the works</p>
-            <p style="font-family:var(--body);font-size:.87rem;color:#9aa0a6;line-height:1.5;margin:0">The next issue is being researched and written. More signals from the frontier.</p>
-          </div>
+      <div class="cv-bottom">
+        <p class="cv-kicker">Field Dispatch · Singapore</p>
+        <h2 class="cv-title">Signals<br>from<br><em>SuperAI</em><br>2026</h2>
+        <div class="cv-cta">
+          <span class="cv-cta-line"></span>
+          Read Issue 01
         </div>
+      </div>
+    </a>
 
+    <!-- ── Issue 02 ──────────────────────────────── -->
+    <a class="cover cover-2" href="issue-2.html">
+      <div class="cv-top">
+        <span class="cv-pub">The Signal</span>
+        <span class="cv-num">Nº 02</span>
+      </div>
+
+      <div style="text-align:center">
+        <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" style="opacity:.18">
+          <rect x="4" y="10" width="32" height="22" rx="3" fill="none" stroke="#f0ece0" stroke-width="1.5"/>
+          <line x1="4" y1="17" x2="36" y2="17" stroke="#f0ece0" stroke-width="1"/>
+          <line x1="14" y1="10" x2="14" y2="32" stroke="#f0ece0" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <div class="cv-bottom">
+        <p class="cv-kicker">Whitepaper Series · Google × Kaggle</p>
+        <h2 class="cv-title">The<br><em>Vibe</em><br><em>Coding</em><br>Papers</h2>
+        <div class="cv-cta">
+          <span class="cv-cta-line"></span>
+          Read Issue 02
+        </div>
+      </div>
+    </a>
+
+    <!-- ── Issue 03 — Coming ──────────────────────── -->
+    <div class="cover cover-3">
+      <div class="cv-top">
+        <span class="cv-pub">The Signal</span>
+        <span class="cv-num">Nº 03</span>
+      </div>
+      <div></div>
+      <div class="cv-bottom">
+        <p class="cv-kicker">Coming soon</p>
+        <h2 class="cv-title" style="font-style:italic;font-weight:300">In the<br>works</h2>
       </div>
     </div>
 
-    <div class="about-strip">
-      <div class="about-strip-inner">
-        <h2>What is The Signal?</h2>
-        <p>A boutique AI magazine that attends conferences, reads whitepapers, and talks to builders — then distils the ideas that actually change how the work gets done. No noise, no hype cycle. Just the signals that matter, written for people who build.</p>
-      </div>
-    </div>
   </main>
 
-  <footer class="front-footer">
-    <span>The Signal</span>
-    <span>Created by Kevin 4.5 — AI bot by Dennis Nieling</span>
-    <span>2026</span>
+  <footer class="foot">
+    <span class="foot-l">The intelligence economy, distilled.</span>
+    <span class="foot-r">Created by Kevin 4.5 · AI bot by Dennis Nieling · 2026</span>
   </footer>
 
-  <script>
-    // Trigger fade-in on cards visible in viewport
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade').forEach(el => obs.observe(el));
-  </script>
 </body>
 </html>
