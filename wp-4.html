@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Agent Skills — The Signal Nº2</title>
+<meta name="description" content="A digest of the Google × Kaggle whitepaper 'Agent Skills' — how a folder with a markdown file became the first credible procedural memory primitive for AI agents." />
+<link rel="stylesheet" href="styles.css?v=2" />
+<style>:root{ --accent:#7c3aed; }</style>
+</head>
+<body>
+  <div class="ribbon">Issue Nº2 · Whitepaper Nº4 · Day 3 — Context Engineering: Sessions, Skills &amp; Memory</div>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="logo" href="index.html"><span class="star">✦</span> THE SIGNAL</a>
+      <nav class="nav">
+        <a href="index.html">Issue 01</a>
+        <a href="issue-2.html">Issue 02</a>
+        <a href="wp-1.html">The New SDLC</a>
+        <a href="wp-2.html">Agent Lifecycle</a>
+        <a href="wp-3.html">Agent Tools</a>
+        <a href="wp-4.html" class="active">Agent Skills</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap article">
+    <div class="art-kicker fade">Whitepaper — Procedural Memory for AI Agents</div>
+    <h1 class="art-headline fade d1"><em>Agent Skills</em></h1>
+    <p class="art-dek fade d2">Every time you dump every instruction into a single system prompt, you pay twice: once in tokens, once in quality. Agent Skills fix that with a folder and a markdown file — and in doing so, they solve the one type of memory LLMs have always lacked.</p>
+    <div class="art-byline fade d3">
+      <span class="who">Debanshu Das · Gabriela Hernandez Larios · Lavi Nigam · Smitha Kolan · Tanvi Singhal</span><span>Google · June 2026</span>
+    </div>
+    <a class="transcript-btn fade d3" href="https://www.kaggle.com/whitepaper-agent-skills" target="_blank" rel="noopener">
+      Read the whitepaper on Kaggle <span class="arr">→</span>
+    </a>
+
+    <figure class="art-hero fade d3">
+      <svg viewBox="0 0 1200 520" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1200" height="520" fill="#ebe5d6"/>
+        <!-- Folder structure diagram -->
+        <!-- Main folder -->
+        <rect x="80" y="60" width="260" height="380" rx="10" fill="#f3f0ff" stroke="#7c3aed" stroke-width="2.5"/>
+        <rect x="80" y="60" width="260" height="50" rx="10" fill="#7c3aed"/>
+        <text x="210" y="92" text-anchor="middle" font-family="Archivo,sans-serif" font-size="14" font-weight="700" fill="#fff" letter-spacing="1">📁 my-skill/</text>
+        <!-- Files inside -->
+        <g font-family="Archivo,sans-serif" font-size="13" fill="#1a1712">
+          <rect x="100" y="132" width="220" height="38" rx="5" fill="#fff" stroke="#7c3aed" stroke-width="1.5"/>
+          <text x="120" y="156">📄 SKILL.md</text>
+          <text x="300" y="156" font-size="10" fill="#7c3aed" font-weight="700">★ entry</text>
+          <rect x="100" y="182" width="220" height="34" rx="5" fill="#fff" stroke="#b8a4f5" stroke-width="1"/>
+          <text x="120" y="203">📁 scripts/</text>
+          <rect x="100" y="228" width="220" height="34" rx="5" fill="#fff" stroke="#b8a4f5" stroke-width="1"/>
+          <text x="120" y="249">📁 references/</text>
+          <rect x="100" y="274" width="220" height="34" rx="5" fill="#fff" stroke="#b8a4f5" stroke-width="1"/>
+          <text x="120" y="295">📁 assets/</text>
+        </g>
+        <text x="210" y="376" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="12" fill="#7c3aed">Any agent with filesystem access can use it.</text>
+
+        <!-- Arrow to loading stages -->
+        <path d="M340 250 L430 250" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrowPurple)"/>
+        <defs><marker id="arrowPurple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#7c3aed"/></marker></defs>
+
+        <!-- Progressive disclosure stages -->
+        <g font-family="Archivo,sans-serif">
+          <!-- Phase 1 -->
+          <rect x="430" y="100" width="280" height="130" rx="8" fill="#fff" stroke="#7c3aed" stroke-width="1.5"/>
+          <rect x="430" y="100" width="280" height="36" rx="8" fill="#7c3aed"/>
+          <text x="570" y="123" text-anchor="middle" font-size="12" font-weight="700" fill="#fff" letter-spacing="1">PHASE 1 — STARTUP</text>
+          <text x="450" y="158" font-size="12" fill="#1a1712">• Agent loads compact metadata</text>
+          <text x="450" y="178" font-size="12" fill="#1a1712">• Name + trigger conditions only</text>
+          <text x="450" y="198" font-size="11" fill="#6f6e8f">token cost: minimal</text>
+
+          <!-- Phase 2 -->
+          <rect x="430" y="260" width="280" height="130" rx="8" fill="#fff" stroke="#7c3aed" stroke-width="1.5"/>
+          <rect x="430" y="260" width="280" height="36" rx="8" fill="#4c1d95"/>
+          <text x="570" y="283" text-anchor="middle" font-size="12" font-weight="700" fill="#fff" letter-spacing="1">PHASE 2 — ON DEMAND</text>
+          <text x="450" y="318" font-size="12" fill="#1a1712">• Full SKILL.md loaded</text>
+          <text x="450" y="338" font-size="12" fill="#1a1712">• Deep references pulled as needed</text>
+          <text x="450" y="358" font-size="11" fill="#6f6e8f">token cost: only what's used</text>
+        </g>
+
+        <!-- Arrow to result -->
+        <path d="M710 250 L790 250" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrowPurple2)"/>
+        <defs><marker id="arrowPurple2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#7c3aed"/></marker></defs>
+
+        <!-- Result -->
+        <rect x="790" y="150" width="300" height="200" rx="10" fill="#fff4d6" stroke="#f59e0b" stroke-width="2"/>
+        <text x="940" y="185" text-anchor="middle" font-family="Archivo,sans-serif" font-size="13" font-weight="700" fill="#1a1712">Generalist agent →</text>
+        <text x="940" y="205" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="14" fill="#7c3aed">specialist on demand</text>
+        <text x="940" y="240" text-anchor="middle" font-family="Archivo,sans-serif" font-size="11" fill="#6f6e8f">Dozens of skills loaded in metadata.</text>
+        <text x="940" y="258" text-anchor="middle" font-family="Archivo,sans-serif" font-size="11" fill="#6f6e8f">One active at full depth.</text>
+        <text x="940" y="310" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="13" fill="#6f6e8f">Token cost of one.</text>
+        <text x="940" y="330" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="13" fill="#6f6e8f">Capability of many.</text>
+      </svg>
+      <figcaption>Progressive disclosure: at startup, only compact metadata loads. Full instructions — and deep references — load only when the matching task arrives. Token cost stays proportional to what's actually being done.</figcaption>
+    </figure>
+
+    <div class="art-grid">
+      <article class="prose">
+        <p>There is a well-understood failure mode in AI agent development that every practitioner
+          hits. You want a capable agent, so you write extensive instructions. The more you add, the
+          more complete the prompt feels — and the worse the agent performs. This is
+          <strong>context rot</strong>, and it's not a prompt engineering problem. It's a
+          structural one. This whitepaper names the structural fix: Agent Skills.</p>
+
+        <h2><span class="n">01</span>Four friction points, one solution</h2>
+        <p>The paper frames Agent Skills as the answer to four distinct problems that have
+          plagued AI agent development simultaneously:</p>
+
+        <p><strong>Context rot.</strong> LLM performance degrades as system prompts grow. The
+          model attends to everything, foreground and background alike — which means burying
+          critical instructions under general ones is actively harmful. Skills solve this by
+          loading exclusively on demand: the agent doesn't carry the weight of a skill until
+          the task calls for it.</p>
+
+        <p><strong>The procedural memory gap.</strong> LLMs have reasonable analogs for two
+          kinds of memory: episodic (what happened in this conversation) and semantic (facts
+          from training). What they've lacked is <em>procedural memory</em> — a reliable way
+          to know <em>how to do something step by step</em>. The paper argues that Agent Skills
+          are <strong>"the first credible procedural memory primitive for LLM Agents."</strong>
+          That's a significant claim. Skills package workflows, not facts — the agent learns
+          how to deploy, not just that deploying is possible.</p>
+
+        <p class="pull">"Agent Skills can be seen as the first credible procedural memory
+          primitive for LLM Agents."</p>
+
+        <p><strong>Multi-agent overload.</strong> The ecosystem was flooded with complex
+          multi-agent systems that are notoriously hard to build and maintain. Skills offer
+          a lighter-weight alternative: a single general-purpose agent that flexes into many
+          specialist roles on demand. Not every task needs an orchestra. Sometimes you just
+          need one very well-prepared musician.</p>
+
+        <p><strong>Portability.</strong> A folder with a markdown file is a remarkably
+          lightweight primitive. Any agent with filesystem access can use it — Claude Code,
+          Codex, Gemini CLI, or anything else with an AGENTS.md–style convention. In a
+          multi-vendor AI landscape, that portability is not a nice-to-have. It's survival.</p>
+
+        <h2><span class="n">02</span>Anatomy of a skill</h2>
+        <p>A skill is a directory containing a <code>SKILL.md</code> file, plus optional
+          subdirectories: <code>scripts/</code> for runnable automation,
+          <code>references/</code> for deep technical content, and <code>assets/</code> for
+          supporting files. The <code>SKILL.md</code> is the entry point — it contains the
+          skill's name, a description of when to activate it, and the step-by-step instructions
+          the agent follows when it does.</p>
+
+        <div class="fig fade">
+          <svg viewBox="0 0 760 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="760" height="200" fill="#f3efe4"/>
+            <g font-family="Archivo,sans-serif" font-size="12" fill="#1a1712">
+              <!-- Skill.md box -->
+              <rect x="30" y="30" width="200" height="140" rx="8" fill="#f3f0ff" stroke="#7c3aed" stroke-width="2"/>
+              <text x="130" y="56" text-anchor="middle" font-weight="700" fill="#7c3aed">SKILL.md</text>
+              <text x="50" y="82">name: deploy-agent</text>
+              <text x="50" y="102">description: …</text>
+              <text x="50" y="122">trigger: when user asks</text>
+              <text x="50" y="142">  to deploy</text>
+              <text x="50" y="162">steps: …</text>
+              <!-- Arrow -->
+              <path d="M230 100 L290 100" stroke="#7c3aed" stroke-width="2" marker-end="url(#ap3)"/>
+              <defs><marker id="ap3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#7c3aed"/></marker></defs>
+              <!-- What the agent gets -->
+              <rect x="290" y="30" width="440" height="140" rx="8" fill="#fff" stroke="#1a1712" stroke-width="1.5"/>
+              <text x="510" y="56" text-anchor="middle" font-weight="700">What the agent gets (on demand)</text>
+              <text x="310" y="82">→ step-by-step workflow, not raw docs</text>
+              <text x="310" y="102">→ exact commands &amp; expected outputs</text>
+              <text x="310" y="122">→ deep references only when explicitly needed</text>
+              <text x="310" y="152" font-size="11" fill="#6f6e8f">token cost: proportional to the task, not the full knowledge base</text>
+            </g>
+          </svg>
+        </div>
+
+        <h2><span class="n">03</span>Progressive disclosure: the key mechanism</h2>
+        <p>The mechanism that makes skills work at scale is <strong>progressive disclosure</strong>,
+          a two-phase loading strategy. At startup, the agent loads only compact metadata summaries:
+          name, a one-line description, and trigger conditions. These occupy minimal context.
+          When a task matches a trigger, the full <code>SKILL.md</code> loads. Deep reference
+          material — technical specifications, large codebases, detailed runbooks — loads only
+          when the skill explicitly requests it.</p>
+
+        <p>The practical result: an agent can carry dozens of specialised capabilities while paying
+          the token cost for only the one it's actively using. "Generallist at idle, specialist
+          on demand" is the operating model. This also means skill libraries can scale to enterprise
+          breadth without degrading performance on any individual task — because the context window
+          only ever sees one skill's depth at a time.</p>
+
+        <h2><span class="n">04</span>Builder vs Developer: two personas</h2>
+        <p>The paper explicitly serves two audiences. <strong>Builders</strong> are those using
+          skills: they install published skills, configure them for their context, and trust that
+          the agent will load them at the right moment. The cognitive overhead is low — point the
+          agent at a skills directory and the machinery handles the rest.</p>
+
+        <p><strong>Developers</strong> create, version, and manage skills. For them, the paper
+          covers evaluation strategies (how do you know a skill is actually working?), production
+          readiness (what makes a skill safe to deploy in an enterprise context?), meta-skills
+          (skills that manage other skills), and composition (combining skills to cover complex,
+          multi-stage workflows).</p>
+
+        <p class="pull">"A folder with a markdown file is a remarkably lightweight primitive. Any
+          agent with filesystem access can use it — perfectly portable across a multi-vendor
+          AI landscape."</p>
+
+        <h2><span class="n">05</span>Why this matters now</h2>
+        <p>The adoption velocity the paper notes is not accidental. Skills arrived at the exact
+          moment the ecosystem needed them: agent frameworks proliferating, context windows
+          growing but not unlimited, enterprise customers demanding repeatable workflows rather
+          than one-off demonstrations. The whitepaper situates Agent Skills as the connective
+          tissue between the promise of agentic AI and the reality of production deployment.</p>
+
+        <p>Alongside Paper 1's "context engineering is the real skill" and Paper 3's protocols
+          for tool connection, Agent Skills complete the trio: now you know what an agent
+          is, how it connects to the world, and how to give it portable, reproducible knowledge
+          about <em>how</em> to act in it.</p>
+
+        <div class="art-footnav">
+          <a href="wp-3.html"><span class="lbl">Previous</span>← Agent Tools &amp; Interoperability</a>
+          <a href="issue-2.html"><span class="lbl">Back to</span>Issue Nº2 →</a>
+        </div>
+      </article>
+
+      <aside class="sidebar">
+        <div class="keybox fade">
+          <h4>The Takeaways</h4>
+          <ul>
+            <li><b>Context rot</b>Too many instructions degrade LLM quality. Skills load only on demand — no idle weight.</li>
+            <li><b>Procedural memory</b>LLMs knew what and when. Skills give them <em>how</em> — the first credible procedural memory primitive.</li>
+            <li><b>Single agent</b>One generalist flexes into many specialists via skills. Not every task needs a multi-agent system.</li>
+            <li><b>Portability</b>A folder + SKILL.md. Works with any agent that has filesystem access. Truly cross-platform.</li>
+            <li><b>Two phases</b>Startup: metadata only. On demand: full depth. Token cost proportional to task.</li>
+            <li><b>Two personas</b>Builders use skills. Developers create and version them.</li>
+          </ul>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Skills</span><span class="tag">Memory</span>
+          <span class="tag">Context</span><span class="tag">Portability</span>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="wrap">
+    <div class="colophon">
+      <span>The Signal — Issue Nº2</span><span>Whitepaper Nº4 · Das, Hernandez Larios, Nigam, Kolan &amp; Singhal</span>
+      <span>Created by Kevin 4.5 — AI bot by Dennis Nieling</span>
+    </div>
+  </footer>
+</body>
+</html>

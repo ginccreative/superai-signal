@@ -72,6 +72,58 @@ engineering culture." · "Generation is solved. Verification, judgment, and dire
   structured code review, guardrails, sandboxing, zero-trust; what changes for human reviewers when
   PR volume scales — bundled summaries, conditional LGTM, agent-driven code-review skills).
 
-## ⚠️ Open item
-Links #2 and #3 supplied were identical (`agents-cli-adk-lifecycle`). Need correct URLs for the
-remaining whitepapers (assignment 3 onward) to digest & add them.
+## Paper 3 — "Agent Tools & Interoperability" (Day 2 Whitepaper, June 2026 run)
+**Authors:** Kanchana Patlolla, Łukasz Olejniczak, and Pier Paolo Ippolito · Google · June 2026
+**URL:** https://www.kaggle.com/whitepaper-agent-tools-and-interoperability · DIGESTED → wp-3.html
+**Accent:** #f59e0b (amber)
+
+Core arc & key points:
+- The **standard-of-one problem**: without open standards each API is bespoke — fragile wrappers,
+  compounding tech debt, a ceiling on what one developer can build.
+- **MCP (Model Context Protocol)**: open standard for connecting tools to foundation models. An MCP
+  server exposes tools; an MCP client (your agent/IDE) discovers and calls them. "Define once, use
+  from any agent." USB-C analogy.
+- **A2A (Agent-to-Agent)**: open protocol for agent-to-agent delegation and collaboration across
+  vendor/org boundaries. Enables specialist agent teams without custom glue.
+- **From builder to orchestrator**: adopting open protocols frees the developer from glue code and
+  raises the leverage point to goals and quality gates.
+- **Promise**: MCP + A2A → "a virtual data and execution team in a single afternoon."
+- **Security risks**: MCP servers run with granted permissions; prompt injection via tool responses;
+  zero-trust mindset required, especially in enterprise environments.
+
+Note: a separate November 2025 version exists at `/whitepaper-agent-tools-and-interoperability-with-mcp`
+(authors: Mike Styer, Kanchana Patlolla, Madhurranjan Mohaan, Santiago Díaz, Anant Nawalgaria) — deeper
+dive on MCP security/enterprise readiness. Not the same paper as the June 2026 version digested here.
+
+---
+
+## Paper 4 — "Agent Skills" (Day 3 Whitepaper, June 2026 run)
+**Authors:** Debanshu Das, Gabriela Hernandez Larios, Lavi Nigam, Smitha Kolan, Tanvi Singhal · Google · June 2026
+**URL:** https://www.kaggle.com/whitepaper-agent-skills · DIGESTED → wp-4.html
+**Accent:** #7c3aed (violet)
+
+Core arc & key points:
+- **Structure**: SKILL.md + scripts/ + references/ + assets/ directories. SKILL.md is the entry point.
+- **Four friction points solved**:
+  1. Context rot — too many instructions degrade LLM performance; skills load on demand.
+  2. Procedural memory gap — LLMs had episodic and semantic memory but not procedural; Skills are
+     "the first credible procedural memory primitive for LLM Agents."
+  3. Multi-agent overload — complex multi-agent systems are hard to maintain; one generalist agent
+     with skills can flex into many specialist roles.
+  4. Portability — a folder + markdown file works with any agent that has filesystem access.
+- **Progressive disclosure**: two-phase loading. Phase 1 (startup): compact metadata only, minimal
+  token cost. Phase 2 (on demand): full SKILL.md + deep references when task matches trigger.
+- **Two personas**: Builders (using skills) and Developers (creating, versioning, managing them).
+  Developer topics include: evaluation, production readiness, meta-skills, composition.
+- Cross-platform portability: works with Claude Code, Codex, Gemini CLI, any AGENTS.md-compatible agent.
+
+Pull quotes: "The first credible procedural memory primitive for LLM Agents."
+"A folder with a markdown file is a remarkably lightweight primitive."
+
+---
+
+## ⚠️ Remaining papers (Days 4–5)
+- **Day 4** — *Agent Quality & Security* (evals, guardrails, new threat vectors from agentic AI)
+- **Day 5** — *Prototype to Production / Spec-Driven Production-Grade Development*
+  (cloud deploy, observability, enterprise-ready agent fleets)
+URL pattern: https://www.kaggle.com/whitepaper-[slug] — add when source links confirmed.
