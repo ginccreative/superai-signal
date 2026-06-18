@@ -3,134 +3,402 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>The Signal — SuperAI 2026, Singapore</title>
-<meta name="description" content="A field dispatch from SuperAI 2026 at Marina Bay Sands, Singapore — three talks, distilled." />
+<title>The Signal — AI Intelligence, Distilled</title>
+<meta name="description" content="The Signal — a boutique AI magazine distilling the most important ideas from conferences, whitepapers, and the frontier of the intelligence economy." />
 <link rel="stylesheet" href="styles.css?v=2" />
+<style>
+  /* ── Front page overrides ─────────────────────────────── */
+  :root { --accent: #2563eb; }
+
+  .front-ribbon {
+    background: #1a1712;
+    color: #f3efe4;
+    text-align: center;
+    font-family: var(--label);
+    font-size: .75rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    padding: 9px 16px;
+  }
+
+  .front-masthead {
+    border-bottom: 2px solid #1a1712;
+    padding: 28px 0 20px;
+  }
+  .front-masthead-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .front-logo {
+    font-family: var(--display);
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    font-weight: 700;
+    letter-spacing: -.03em;
+    color: #1a1712;
+    text-decoration: none;
+    line-height: 1;
+  }
+  .front-logo .star { color: var(--accent); margin-right: 4px; }
+  .front-tagline {
+    font-family: var(--label);
+    font-size: .78rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #6f6e8f;
+    margin-top: 2px;
+  }
+  .front-rule {
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    margin: 10px auto 0;
+  }
+
+  /* ── Issue grid ───────────────────────────────────────── */
+  .issues-grid {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+  .issues-label {
+    font-family: var(--label);
+    font-size: .72rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: #9aa0a6;
+    margin-bottom: 28px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0d9cc;
+  }
+
+  /* stack on mobile, side-by-side on wide */
+  .issues-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 28px;
+    align-items: start;
+  }
+
+  .issue-card {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #1a1712;
+    border-radius: 6px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform .18s ease, box-shadow .18s ease;
+    background: #f3efe4;
+  }
+  .issue-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(26,23,18,.14);
+  }
+
+  .ic-cover {
+    position: relative;
+    padding: 36px 28px 28px;
+    background: var(--ic-bg, #1a1712);
+    flex-shrink: 0;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .ic-number {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    font-family: var(--label);
+    font-size: .7rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(243,239,228,.5);
+  }
+  .ic-badge {
+    display: inline-block;
+    font-family: var(--label);
+    font-size: .68rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid rgba(243,239,228,.4);
+    border-radius: 2px;
+    color: rgba(243,239,228,.7);
+    margin-bottom: 14px;
+    align-self: flex-start;
+  }
+  .ic-headline {
+    font-family: var(--display);
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.12;
+    color: #f3efe4;
+    margin: 0 0 10px;
+    letter-spacing: -.02em;
+  }
+  .ic-headline em { font-style: italic; color: var(--ic-accent, #93b4f5); }
+  .ic-sub {
+    font-family: var(--body);
+    font-size: .9rem;
+    color: rgba(243,239,228,.65);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* SVG art strip */
+  .ic-art {
+    background: #ebe5d6;
+    overflow: hidden;
+    height: 130px;
+    flex-shrink: 0;
+  }
+  .ic-art svg { width: 100%; height: 100%; display: block; }
+
+  .ic-body {
+    padding: 22px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1;
+  }
+  .ic-meta {
+    font-family: var(--label);
+    font-size: .7rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #9aa0a6;
+  }
+  .ic-contents {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .ic-contents li {
+    font-family: var(--body);
+    font-size: .87rem;
+    color: #4a4438;
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.4;
+  }
+  .ic-contents li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--ic-accent2, #2563eb);
+    font-size: .8rem;
+  }
+  .ic-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid #e0d9cc;
+    font-family: var(--label);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ic-accent2, #2563eb);
+  }
+  .ic-cta-arr { font-size: 1.1rem; }
+
+  /* ── About strip ─────────────────────────────────────── */
+  .about-strip {
+    background: #1a1712;
+    color: #f3efe4;
+    padding: 42px 24px;
+    text-align: center;
+  }
+  .about-strip-inner { max-width: 680px; margin: 0 auto; }
+  .about-strip h2 {
+    font-family: var(--display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 12px;
+    letter-spacing: -.02em;
+  }
+  .about-strip p {
+    font-family: var(--body);
+    font-size: .97rem;
+    color: rgba(243,239,228,.7);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── Front footer ────────────────────────────────────── */
+  .front-footer {
+    background: #f3efe4;
+    border-top: 2px solid #1a1712;
+    padding: 22px 24px;
+    text-align: center;
+    font-family: var(--label);
+    font-size: .7rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #9aa0a6;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
+  }
+  .front-footer span::after { content: '·'; margin-left: 20px; }
+  .front-footer span:last-child::after { content: ''; }
+</style>
 </head>
 <body>
-  <div class="ribbon">Marina Bay Sands · Singapore · 10–11 June 2026 — A SuperAI Field Dispatch</div>
-  <header class="masthead">
-    <div class="masthead-inner">
-      <a class="logo" href="index.html"><span class="star">✦</span> THE SIGNAL</a>
-      <nav class="nav">
-        <a href="index.html" class="active">Issue 01</a>
-        <a href="issue-2.html">Issue 02</a>
-        <a href="article-1.html">Evans</a>
-        <a href="article-2.html">Frontier</a>
-        <a href="article-3.html">Tegmark</a>
-      </nav>
+  <div class="front-ribbon">The Intelligence Economy · Distilled for People Who Build</div>
+
+  <header class="front-masthead">
+    <div class="front-masthead-inner">
+      <a class="front-logo" href="index.html"><span class="star">✦</span> THE SIGNAL</a>
+      <p class="front-tagline">AI Intelligence — Distilled</p>
+      <div class="front-rule"></div>
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="cover">
-      <div class="cover-kicker fade">Issue Nº1 — The Intelligence Economy</div>
-      <h1 class="fade d1">Signals from<br><em>SuperAI</em> 2026</h1>
-      <p class="cover-sub fade d2">
-        Three of the conference's sharpest talks — on the economics of AI, the new shape of the
-        frontier, and whether we can keep the future human — distilled to what actually matters.
-      </p>
-      <div class="cover-meta fade d3">
-        <span>3 Dispatches</span><span class="dot"></span>
-        <span>Marina Bay Sands</span><span class="dot"></span>
-        <span>June 2026</span>
+  <main>
+    <div class="issues-grid">
+      <p class="issues-label">All Issues</p>
+      <div class="issues-row">
+
+        <!-- ── Issue 01 ─────────────────────────────────── -->
+        <a class="issue-card fade" href="issue-1.html"
+           style="--ic-bg:#1a1712; --ic-accent:#c0392b; --ic-accent2:#c0392b">
+          <div class="ic-cover" style="background:#1a1712">
+            <span class="ic-number">Nº 01</span>
+            <span class="ic-badge">Field Dispatch</span>
+            <h2 class="ic-headline">Signals from<br><em>SuperAI</em> 2026</h2>
+            <p class="ic-sub">Marina Bay Sands, Singapore — three of the conference's sharpest talks, distilled to what actually matters.</p>
+          </div>
+          <div class="ic-art">
+            <svg viewBox="0 0 500 130" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+              <rect width="500" height="130" fill="#ebe5d6"/>
+              <!-- Evans: bar chart -->
+              <g fill="#c0392b" opacity=".85">
+                <rect x="30" y="75" width="18" height="36"/>
+                <rect x="54" y="60" width="18" height="51"/>
+                <rect x="78" y="44" width="18" height="67"/>
+                <rect x="102" y="28" width="18" height="83"/>
+                <rect x="126" y="15" width="18" height="96"/>
+              </g>
+              <!-- Frontier: globe lines -->
+              <circle cx="270" cy="65" r="40" fill="none" stroke="#1f6f6b" stroke-width="1.5" opacity=".7"/>
+              <ellipse cx="270" cy="65" rx="18" ry="40" fill="none" stroke="#1f6f6b" stroke-width="1.5" opacity=".7"/>
+              <line x1="230" y1="65" x2="310" y2="65" stroke="#1f6f6b" stroke-width="1.5" opacity=".7"/>
+              <!-- Tegmark: fork -->
+              <path d="M400 120 L400 70 L355 20" fill="none" stroke="#c0392b" stroke-width="2"/>
+              <path d="M403 120 L403 70 L448 20" fill="none" stroke="#27408b" stroke-width="2"/>
+              <circle cx="401" cy="70" r="5" fill="#1a1712"/>
+              <circle cx="448" cy="20" r="7" fill="#27408b"/>
+              <circle cx="355" cy="20" r="7" fill="none" stroke="#c0392b" stroke-width="2"/>
+            </svg>
+          </div>
+          <div class="ic-body">
+            <p class="ic-meta">June 2026 · Singapore · 3 Dispatches</p>
+            <ul class="ic-contents">
+              <li>Benedict Evans — Are models just infrastructure?</li>
+              <li>Mistral, MiniMax & Lightspeed — Frontier after the benchmarks</li>
+              <li>Max Tegmark — The fork in the road</li>
+            </ul>
+            <div class="ic-cta">
+              <span>Read Issue 01</span>
+              <span class="ic-cta-arr">→</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- ── Issue 02 ─────────────────────────────────── -->
+        <a class="issue-card fade d1" href="issue-2.html"
+           style="--ic-bg:#0d1b2e; --ic-accent:#93b4f5; --ic-accent2:#2563eb">
+          <div class="ic-cover" style="background:#0d1b2e">
+            <span class="ic-number">Nº 02</span>
+            <span class="ic-badge">Whitepaper Series</span>
+            <h2 class="ic-headline">The <em>Vibe&nbsp;Coding</em> Papers</h2>
+            <p class="ic-sub">Google × Kaggle ran a five-day AI Agents intensive. We read all four whitepapers so you don't have to.</p>
+          </div>
+          <div class="ic-art">
+            <svg viewBox="0 0 500 130" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+              <rect width="500" height="130" fill="#ebe5d6"/>
+              <!-- Spectrum: climbing boxes -->
+              <rect x="20"  y="85" width="52" height="34" rx="4" fill="none" stroke="#a9c4f7" stroke-width="1.5"/>
+              <rect x="100" y="68" width="52" height="51" rx="4" fill="none" stroke="#7da6f3" stroke-width="1.5"/>
+              <rect x="180" y="50" width="52" height="69" rx="4" fill="none" stroke="#4f86ee" stroke-width="1.5"/>
+              <rect x="260" y="30" width="58" height="89" rx="4" fill="#2563eb"/>
+              <path d="M72 102 L100 84 M152 84 L180 66 M232 66 L260 52" stroke="#1a1712" stroke-width="1.5" fill="none"/>
+              <!-- MCP hub -->
+              <circle cx="400" cy="65" r="30" fill="#f59e0b" opacity=".9"/>
+              <text x="400" y="60" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" font-weight="700" fill="#fff">MCP</text>
+              <text x="400" y="72" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" font-weight="700" fill="#fff">A2A</text>
+              <g stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="4 3" fill="none" opacity=".7">
+                <line x1="400" y1="35" x2="400" y2="10"/>
+                <line x1="375" y1="47" x2="343" y2="28"/>
+                <line x1="370" y1="65" x2="340" y2="65"/>
+                <line x1="425" y1="47" x2="457" y2="28"/>
+                <line x1="430" y1="65" x2="460" y2="65"/>
+              </g>
+            </svg>
+          </div>
+          <div class="ic-body">
+            <p class="ic-meta">June 2026 · Google × Kaggle · 4 Whitepapers</p>
+            <ul class="ic-contents">
+              <li>The New SDLC — Agent = Model + Harness</li>
+              <li>Agent Lifecycle — ADK 2.0 & Agents CLI</li>
+              <li>Agent Tools — MCP, A2A, the open standard</li>
+              <li>Agent Skills — Procedural memory for LLMs</li>
+            </ul>
+            <div class="ic-cta">
+              <span>Read Issue 02</span>
+              <span class="ic-cta-arr">→</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- ── Coming soon placeholder ───────────────────── -->
+        <div class="issue-card" style="opacity:.5; cursor:default; pointer-events:none; --ic-bg:#2e2a22; --ic-accent:#b8b09a; --ic-accent2:#9aa0a6">
+          <div class="ic-cover" style="background:#2e2a22; min-height:200px; justify-content:center; align-items:center">
+            <span class="ic-number">Nº 03</span>
+            <p style="font-family:var(--display);font-style:italic;font-size:1.8rem;color:rgba(243,239,228,.35);text-align:center;margin:0">Coming<br>soon</p>
+          </div>
+          <div class="ic-body">
+            <p class="ic-meta">In the works</p>
+            <p style="font-family:var(--body);font-size:.87rem;color:#9aa0a6;line-height:1.5;margin:0">The next issue is being researched and written. More signals from the frontier.</p>
+          </div>
+        </div>
+
       </div>
-    </section>
+    </div>
 
-    <a href="issue-2.html" class="fade" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:10px 0 30px;padding:18px 24px;background:#1a1712;color:#f3efe4;border-radius:4px;font-family:var(--label);font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;">
-      <span><span style="color:#5a8af0;">● New issue</span> &nbsp;Nº2 — The Google × Kaggle Vibe Coding Papers</span>
-      <span>Read Issue 02 →</span>
-    </a>
-
-    <section class="contents">
-      <div class="contents-head fade">
-        <h2>In This Issue</h2>
-        <span>Contents</span>
+    <div class="about-strip">
+      <div class="about-strip-inner">
+        <h2>What is The Signal?</h2>
+        <p>A boutique AI magazine that attends conferences, reads whitepapers, and talks to builders — then distils the ideas that actually change how the work gets done. No noise, no hype cycle. Just the signals that matter, written for people who build.</p>
       </div>
-
-      <!-- 01 — Benedict Evans -->
-      <a class="feature-link fade" href="article-1.html" style="--accent:#c0392b">
-        <div class="feature-num">01</div>
-        <div class="feature-body">
-          <div class="fl-kicker">Keynote · The Economics of AI</div>
-          <h3>Are the Models Just <em>Infrastructure?</em></h3>
-          <p>A trillion dollars of capex, models that behave like commodities, and the quiet question of where the value really ends up.</p>
-          <div class="byline">Benedict Evans</div>
-        </div>
-        <div class="feature-art">
-          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-            <rect width="400" height="300" fill="#f3efe4"/>
-            <g fill="#c0392b">
-              <rect x="40" y="210" width="34" height="50"/>
-              <rect x="92" y="180" width="34" height="80"/>
-              <rect x="144" y="138" width="34" height="122"/>
-              <rect x="196" y="92" width="34" height="168"/>
-              <rect x="248" y="58" width="34" height="202"/>
-              <rect x="300" y="30" width="34" height="230"/>
-            </g>
-            <path d="M40 230 L334 30" fill="none" stroke="#1a1712" stroke-width="2.5" stroke-dasharray="2 7" stroke-linecap="round"/>
-            <circle cx="334" cy="30" r="6" fill="#1a1712"/>
-            <line x1="30" y1="260" x2="360" y2="260" stroke="#1a1712" stroke-width="2"/>
-          </svg>
-        </div>
-      </a>
-
-      <!-- 02 — Frontier Panel -->
-      <a class="feature-link fade" href="article-2.html" style="--accent:#1f6f6b">
-        <div class="feature-num">02</div>
-        <div class="feature-body">
-          <div class="fl-kicker">Panel · The Model Layer</div>
-          <h3>Frontier, <em>After the Benchmarks</em></h3>
-          <p>Mistral, MiniMax and Lightspeed on what "frontier" means once intelligence becomes a commodity — and where the value moves next.</p>
-          <div class="byline">Jeff Su · Cherry · Hemant Mohapatra</div>
-        </div>
-        <div class="feature-art">
-          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-            <rect width="400" height="300" fill="#f3efe4"/>
-            <circle cx="200" cy="150" r="92" fill="none" stroke="#1a1712" stroke-width="2"/>
-            <ellipse cx="200" cy="150" rx="40" ry="92" fill="none" stroke="#1f6f6b" stroke-width="2"/>
-            <line x1="108" y1="150" x2="292" y2="150" stroke="#1f6f6b" stroke-width="2"/>
-            <line x1="200" y1="58" x2="200" y2="242" stroke="#1f6f6b" stroke-width="2"/>
-            <g fill="#c0392b">
-              <circle cx="200" cy="58" r="9"/><circle cx="118" cy="198" r="9"/><circle cx="282" cy="198" r="9"/>
-            </g>
-            <g fill="#1a1712"><circle cx="200" cy="150" r="5"/></g>
-          </svg>
-        </div>
-      </a>
-
-      <!-- 03 — Max Tegmark -->
-      <a class="feature-link fade" href="article-3.html" style="--accent:#27408b">
-        <div class="feature-num">03</div>
-        <div class="feature-body">
-          <div class="fl-kicker">Keynote · AI &amp; Humanity</div>
-          <h3>The Fork in <em>the Road</em></h3>
-          <p>MIT's Max Tegmark on the race to replace, the pro-human path, and why we can have AI's upside without building what we can't control.</p>
-          <div class="byline">Max Tegmark · MIT</div>
-        </div>
-        <div class="feature-art">
-          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-            <rect width="400" height="300" fill="#f3efe4"/>
-            <path d="M190 280 L190 150 L70 30" fill="none" stroke="#c0392b" stroke-width="3"/>
-            <path d="M210 280 L210 150 L330 30" fill="none" stroke="#27408b" stroke-width="3"/>
-            <circle cx="70" cy="30" r="10" fill="none" stroke="#c0392b" stroke-width="3"/>
-            <line x1="63" y1="23" x2="77" y2="37" stroke="#c0392b" stroke-width="3"/><line x1="77" y1="23" x2="63" y2="37" stroke="#c0392b" stroke-width="3"/>
-            <circle cx="330" cy="30" r="10" fill="#27408b"/>
-            <path d="M325 30 l4 4 l7 -9" fill="none" stroke="#f3efe4" stroke-width="2.5"/>
-            <circle cx="200" cy="150" r="7" fill="#1a1712"/>
-          </svg>
-        </div>
-      </a>
-    </section>
+    </div>
   </main>
 
-  <footer class="wrap">
-    <div class="colophon">
-      <span>The Signal — Issue Nº1</span>
-      <span>SuperAI 2026 · Marina Bay Sands, Singapore</span>
-      <span>Transcribed &amp; distilled on-device</span>
-      <span>Created by Kevin 4.5 — AI bot by Dennis Nieling</span>
-    </div>
+  <footer class="front-footer">
+    <span>The Signal</span>
+    <span>Created by Kevin 4.5 — AI bot by Dennis Nieling</span>
+    <span>2026</span>
   </footer>
+
+  <script>
+    // Trigger fade-in on cards visible in viewport
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+  </script>
 </body>
 </html>
