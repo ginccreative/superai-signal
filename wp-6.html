@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spec-Driven Production-Grade Development — The Signal Nº2</title>
+<meta name="description" content="A digest of the Google × Kaggle Day 5 whitepaper by Lee Boonstra — how to bridge the gap between vibe-coded prototypes and production-grade software with spec-driven development." />
+<link rel="stylesheet" href="styles.css?v=2" />
+<style>:root{ --accent:#0891b2; }</style>
+</head>
+<body>
+  <div class="ribbon">Issue Nº2 · Whitepaper Nº6 · Day 5 — Spec-Driven Production-Grade Development</div>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="logo" href="index.html"><span class="star">✦</span> THE SIGNAL</a>
+      <nav class="nav">
+        <a href="issue-1.html">Issue 01</a>
+        <a href="issue-2.html" class="active">Issue 02</a>
+      </nav>
+    </div>
+  </header>
+  <nav class="subnav">
+    <div class="subnav-inner">
+      <a href="wp-1.html">The New SDLC</a>
+      <a href="wp-2.html">Agent Lifecycle</a>
+      <a href="wp-3.html">Agent Tools</a>
+      <a href="wp-4.html">Agent Skills</a>
+      <a href="wp-5.html">Security &amp; Eval</a>
+      <a href="wp-6.html" class="active">Spec-Driven Prod</a>
+    </div>
+  </nav>
+
+  <main class="wrap article">
+    <div class="art-kicker fade">Whitepaper — Closing the Production Gap</div>
+    <h1 class="art-headline fade d1">Spec-Driven<br><em>Production-Grade</em><br>Development</h1>
+    <p class="art-dek fade d2">AI agents write code at warp speed. That speed is an illusion — unless the spec, not the code, is your source of truth. The series capstone explains why code is disposable and Gherkin specifications are the new engineering artifact that matters.</p>
+    <div class="art-byline fade d3">
+      <span class="who">Lee Boonstra</span><span>Google Cloud · Office of the CTO</span><span>· Day 5</span>
+    </div>
+    <a class="transcript-btn fade d3" href="https://www.kaggle.com/whitepaper-spec-driven-production-grade-development-in-the-age-of-vibe-coding" target="_blank" rel="noopener">
+      Read the whitepaper <span class="arr">→</span>
+    </a>
+
+    <figure class="art-hero fade d3">
+      <svg viewBox="0 0 1200 520" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1200" height="520" fill="#ebe5d6"/>
+
+        <!-- Left: SPEC.md as source of truth -->
+        <rect x="60" y="80" width="220" height="360" rx="8" fill="#fff" stroke="#0891b2" stroke-width="2.5"/>
+        <rect x="60" y="80" width="220" height="44" rx="8" fill="#0891b2"/>
+        <!-- fold corner -->
+        <polygon points="253,80 280,80 280,107" fill="#0670a0"/>
+        <text x="170" y="109" text-anchor="middle" font-family="Archivo,sans-serif" font-size="13" font-weight="700" fill="#fff" letter-spacing="1">SPEC.md</text>
+        <!-- constitution -->
+        <rect x="80" y="142" width="180" height="22" rx="3" fill="#e0f5fb"/>
+        <text x="170" y="157" text-anchor="middle" font-family="Archivo,sans-serif" font-size="10" font-weight="700" fill="#0891b2">constitution.md</text>
+        <!-- gherkin scenario -->
+        <rect x="80" y="174" width="180" height="78" rx="3" fill="#f8fdfe" stroke="#b2e4f0" stroke-width="1"/>
+        <text x="90" y="192" font-family="Archivo,sans-serif" font-size="9" font-weight="700" fill="#0670a0">GIVEN</text>
+        <text x="90" y="205" font-family="Archivo,sans-serif" font-size="9" fill="#4a4438">a developer submits code</text>
+        <text x="90" y="220" font-family="Archivo,sans-serif" font-size="9" font-weight="700" fill="#0670a0">WHEN</text>
+        <text x="90" y="233" font-family="Archivo,sans-serif" font-size="9" fill="#4a4438">the policy server reviews</text>
+        <text x="90" y="248" font-family="Archivo,sans-serif" font-size="9" font-weight="700" fill="#0670a0">THEN</text>
+        <!-- plan.md -->
+        <rect x="80" y="264" width="180" height="22" rx="3" fill="#e0f5fb"/>
+        <text x="170" y="279" text-anchor="middle" font-family="Archivo,sans-serif" font-size="10" font-weight="700" fill="#0891b2">plan.md</text>
+        <!-- tasks.md -->
+        <rect x="80" y="296" width="180" height="22" rx="3" fill="#e0f5fb"/>
+        <text x="170" y="311" text-anchor="middle" font-family="Archivo,sans-serif" font-size="10" font-weight="700" fill="#0891b2">tasks.md</text>
+        <!-- label -->
+        <text x="170" y="400" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="12" fill="#0891b2">source of truth</text>
+        <text x="170" y="416" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="12" fill="#0891b2">(durable)</text>
+
+        <!-- Arrow: spec → AI agent -->
+        <path d="M280 260 L360 260" stroke="#0891b2" stroke-width="2.5" fill="none" marker-end="url(#arr6)"/>
+        <defs><marker id="arr6" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#0891b2"/></marker></defs>
+
+        <!-- Center: AI coding agent -->
+        <rect x="360" y="210" width="140" height="100" rx="8" fill="#0c1929" stroke="#0891b2" stroke-width="2"/>
+        <text x="430" y="252" text-anchor="middle" font-family="Archivo,sans-serif" font-size="11" font-weight="700" fill="#0891b2" letter-spacing="1">AI CODING</text>
+        <text x="430" y="270" text-anchor="middle" font-family="Archivo,sans-serif" font-size="11" font-weight="700" fill="#0891b2" letter-spacing="1">AGENT</text>
+        <text x="430" y="292" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" fill="#5a8af0">Antigravity · Gemini CLI</text>
+
+        <!-- Arrow: agent → code (dashed = disposable) -->
+        <path d="M500 260 L580 260" stroke="#9aa0a6" stroke-width="2" stroke-dasharray="5 3" fill="none" marker-end="url(#arr6g)"/>
+        <defs><marker id="arr6g" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#9aa0a6"/></marker></defs>
+
+        <!-- Code box (disposable) -->
+        <rect x="580" y="210" width="150" height="100" rx="8" fill="#f3efe4" stroke="#cdc4ae" stroke-width="1.5" stroke-dasharray="6 3"/>
+        <text x="655" y="252" text-anchor="middle" font-family="Archivo,sans-serif" font-size="11" font-weight="700" fill="#9aa0a6" letter-spacing="1">CODE</text>
+        <text x="655" y="272" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="11" fill="#b8b09a">disposable</text>
+        <text x="655" y="290" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" fill="#b8b09a">regenerate anytime</text>
+
+        <!-- Arrow: code → test suite -->
+        <path d="M730 260 L810 260" stroke="#0891b2" stroke-width="2.5" fill="none" marker-end="url(#arr6b)"/>
+        <defs><marker id="arr6b" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#0891b2"/></marker></defs>
+
+        <!-- Test suite -->
+        <rect x="810" y="170" width="160" height="56" rx="6" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+        <text x="890" y="198" text-anchor="middle" font-family="Archivo,sans-serif" font-size="10" font-weight="700" fill="#065f46">✓ TEST SUITE</text>
+        <text x="890" y="216" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" fill="#065f46">Gherkin → passing tests</text>
+
+        <!-- Policy server -->
+        <rect x="810" y="240" width="160" height="56" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+        <text x="890" y="265" text-anchor="middle" font-family="Archivo,sans-serif" font-size="10" font-weight="700" fill="#92400e">POLICY SERVER</text>
+        <text x="890" y="283" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" fill="#92400e">zero-trust code review</text>
+
+        <!-- Production pipeline -->
+        <rect x="810" y="310" width="160" height="56" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+        <text x="890" y="336" text-anchor="middle" font-family="Archivo,sans-serif" font-size="10" font-weight="700" fill="#5b21b6">PRODUCTION</text>
+        <text x="890" y="354" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" fill="#5b21b6">sandbox → canary → prod</text>
+
+        <!-- Connecting lines between right boxes -->
+        <line x1="890" y1="226" x2="890" y2="240" stroke="#1a1712" stroke-width="1.5"/>
+        <line x1="890" y1="296" x2="890" y2="310" stroke="#1a1712" stroke-width="1.5"/>
+
+        <!-- Spec feeds tests (arc back from spec to test suite) -->
+        <path d="M170 80 Q170 40 890 40 Q970 40 890 170" fill="none" stroke="#0891b2" stroke-width="1.5" stroke-dasharray="5 3" opacity=".5"/>
+        <text x="530" y="34" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" font-weight="700" letter-spacing="2" fill="#0891b2" opacity=".7">SPEC DRIVES TESTS (NOT CODE)</text>
+
+        <!-- Legend label left -->
+        <text x="80" y="460" font-family="Archivo,sans-serif" font-size="10" font-weight="700" letter-spacing="2" fill="#6f6e8f">SPEC · DURABLE ARTIFACT</text>
+        <text x="655" y="460" text-anchor="middle" font-family="Archivo,sans-serif" font-size="10" font-weight="700" letter-spacing="2" fill="#9aa0a6">CODE · EPHEMERAL OUTPUT</text>
+        <text x="890" y="460" text-anchor="middle" font-family="Archivo,sans-serif" font-size="10" font-weight="700" letter-spacing="2" fill="#0891b2">PIPELINE · ZERO-TRUST</text>
+      </svg>
+      <figcaption>The spec is the source of truth. Code is disposable — regenerate it anytime. The pipeline enforces trust via test suites and a policy server before anything reaches production.</figcaption>
+    </figure>
+
+    <div class="art-grid">
+      <article class="prose">
+
+        <p>Google Software Engineers saw their daily routine flip 180 degrees in 2025. Tools like Antigravity and Gemini CLI don't just suggest text — they use tools, execute tasks, and churn out a thousand lines of well-documented code rapidly. It feels, Boonstra writes, like hiring "a legion of interns who never sleep and never complain." But there is a catch.</p>
+
+        <h2><span class="n">01</span>The Illusion of Speed</h2>
+        <p>When AI writes code much faster, it can also generate mistakes at an unprecedented rate. Velocity has hit overdrive — but the bug-to-code ratio remains a challenge. The whitepaper calls this the <strong>Illusion of Speed</strong>: you feel productive, but you're producing reviewable drafts, not production software. The bottleneck has shifted. Implementation is no longer the hard part. Verification is.</p>
+
+        <p class="pull">"Vibe Coding is not Vibe In Production."</p>
+
+        <p>The escape route is counterintuitive: since AI can write more comprehensive test coverage than any human could in the same timeframe, let it. Treat that test coverage as the programmatic, objective definition of "correct" — the mechanism that converts velocity into confidence.</p>
+
+        <h2><span class="n">02</span>Code is disposable. Specs are forever.</h2>
+        <p>Spec-Driven Development (SDD) flips the traditional hierarchy. Instead of code being the source of truth and documentation being the afterthought, the <strong>specification becomes the highest-leverage artifact a human produces</strong>. Code is generated from it — and can be regenerated at any time. If a spec is precisely written, the AI has narrow room to hallucinate or drift.</p>
+
+        <p>The SDD artifact stack is a constitution of files: a <code>constitution.md</code> defining immutable project-wide principles (the laws every agent must follow), a <code>spec.md</code> defining feature contracts and behavior, a <code>plan.md</code> as the architecture blueprint reviewed before any code generation begins, and <code>tasks.md</code> as granular, dependency-ordered work items. Humans edit the spec; agents execute from it.</p>
+
+        <p class="pull">The skill that matters has shifted from typing the implementation to defining the intent precisely enough that a machine can't get it wrong.</p>
+
+        <h2><span class="n">03</span>Gherkin: writing specs machines can execute</h2>
+        <p>The whitepaper's practical tool for spec precision is <strong>Gherkin</strong> — the Given/When/Then syntax from Behavior-Driven Development. A Gherkin scenario describes the exact state a system must reach, not the steps or API calls to get there. This gives the agent room to choose the implementation while eliminating ambiguity about what "done" means.</p>
+
+        <p>Crucially, Gherkin scenarios compile directly into failing tests. The agent's goal ceases to be "understand what the user wants" — open-ended and drift-prone — and becomes "make these specific scenarios green." Ambiguity collapses at the specification stage rather than leaking into production code. Security constraints (role access, data boundaries) encoded as spec scenarios get enforced by the test suite, not by someone remembering to add a guard clause.</p>
+
+        <div class="fig fade">
+          <svg viewBox="0 0 760 220" xmlns="http://www.w3.org/2000/svg">
+            <rect width="760" height="220" fill="#f3efe4"/>
+            <!-- three phases -->
+            <rect x="30" y="40" width="200" height="140" rx="6" fill="#e0f5fb" stroke="#0891b2" stroke-width="1.5"/>
+            <text x="130" y="66" text-anchor="middle" font-family="Archivo,sans-serif" font-size="10" font-weight="700" letter-spacing="1.5" fill="#0891b2">SPECIFY</text>
+            <text x="130" y="92" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" fill="#1a1712">Given / When / Then</text>
+            <text x="130" y="108" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" fill="#1a1712">acceptance criteria</text>
+            <text x="130" y="124" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" fill="#1a1712">edge cases</text>
+            <text x="130" y="140" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" fill="#1a1712">security constraints</text>
+            <text x="130" y="162" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="10" fill="#0891b2">humans write this</text>
+
+            <path d="M230 110 L280 110" stroke="#0891b2" stroke-width="2" fill="none" marker-end="url(#a6)"/>
+            <defs><marker id="a6" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0 0 L5 3 L0 6 Z" fill="#0891b2"/></marker></defs>
+
+            <rect x="280" y="40" width="200" height="140" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+            <text x="380" y="66" text-anchor="middle" font-family="Archivo,sans-serif" font-size="10" font-weight="700" letter-spacing="1.5" fill="#d97706">GENERATE</text>
+            <text x="380" y="92" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" fill="#1a1712">AI writes code</text>
+            <text x="380" y="108" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" fill="#1a1712">AI writes tests</text>
+            <text x="380" y="124" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" fill="#1a1712">policy server reviews</text>
+            <text x="380" y="140" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" fill="#1a1712">code-review agent checks</text>
+            <text x="380" y="162" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="10" fill="#d97706">agents do this</text>
+
+            <path d="M480 110 L530 110" stroke="#0891b2" stroke-width="2" fill="none" marker-end="url(#a6b)"/>
+            <defs><marker id="a6b" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0 0 L5 3 L0 6 Z" fill="#0891b2"/></marker></defs>
+
+            <rect x="530" y="40" width="200" height="140" rx="6" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+            <text x="630" y="66" text-anchor="middle" font-family="Archivo,sans-serif" font-size="10" font-weight="700" letter-spacing="1.5" fill="#059669">SHIP</text>
+            <text x="630" y="92" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" fill="#1a1712">eval-gated promotion</text>
+            <text x="630" y="108" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" fill="#1a1712">sandbox → canary</text>
+            <text x="630" y="124" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" fill="#1a1712">canary → production</text>
+            <text x="630" y="140" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" fill="#1a1712">OpenTelemetry traces</text>
+            <text x="630" y="162" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="10" fill="#059669">pipeline enforces this</text>
+          </svg>
+        </div>
+
+        <h2><span class="n">04</span>Zero-trust development pipelines</h2>
+        <p>In the era of agents that never sleep, human-in-the-loop code review becomes a bottleneck. The whitepaper's answer is a <strong>hybrid Policy Server</strong> — an automated code-review agent that enforces the spec before any human reviews a diff. It checks for OWASP failures, verifies that the implementation respects the spec's security constraints, and blocks promotion if tests fail.</p>
+
+        <p>This is zero-trust applied to your development pipeline: no commit is assumed safe just because an AI wrote it. The harness itself is the trust boundary. The result is that velocity and safety stop being in tension — the policy server lets the coding agent move fast while maintaining enforceable guardrails. Combined with the MCP and A2A protocols from earlier in the series, "isolated custom machines" become a modular, interoperable fleet governed by agreed-upon open standards.</p>
+
+        <h2><span class="n">05</span>Eval-gated deployment</h2>
+        <p>Traditional CI/CD checks whether functions behave as expected. For agents, that's necessary but insufficient. An agent can pass 100% of unit tests and still fail in practice by choosing the wrong tool, hallucinating intermediate steps, or violating a guardrail it was never tested against. Boonstra's answer is <strong>evaluation-gated deployment</strong> in three stages:</p>
+
+        <p><strong>Sandbox</strong> — internal testing against the eval suite. Fast checks: linting, unit tests, a lightweight agent eval. Catch obvious issues before they touch main. <strong>Canary</strong> — the agent deploys to a staging environment and runs heavier integration tests against real services, load tests, and internal dogfooding. <strong>Production</strong> — the exact same artifacts are promoted, usually with a human approval step. "Works on staging, breaks in prod" drift is eliminated because you're promoting artifacts, not re-running builds.</p>
+
+        <h2><span class="n">06</span>The complete picture</h2>
+        <p>This capstone paper closes the loop on the entire series. Day 1 established that intent is the new interface and specs are the new craft. Day 2 showed how to scaffold and deploy agents with ADK. Day 3 added the open protocols (MCP/A2A) that make agents interoperable. Day 4 added the security and evaluation frameworks to trust them. Day 5 ties it together: specs as the durable source of truth, code as disposable output, pipelines as zero-trust enforcement.</p>
+
+        <p>The production Google engineer in 2026 writes the spec with precision — constitutions, Gherkin scenarios, plan files — and lets the agent generate, test, and propose. The engineer's role is not implementation. It is <em>intent, governance, and quality control</em>.</p>
+
+        <p class="pull">"The developer's output isn't code — it's the factory that produces code."<br><span style="font-size:.7em;letter-spacing:.08em;font-style:normal;font-family:var(--label);color:var(--ink-soft)">— WP1, now complete.</span></p>
+
+        <div class="art-footnav">
+          <a href="wp-5.html"><span class="lbl">Previous</span>← Security &amp; Eval</a>
+          <a href="issue-2.html"><span class="lbl">Back to</span>Issue Nº2 →</a>
+        </div>
+      </article>
+
+      <aside class="sidebar">
+        <div class="keybox fade">
+          <h4>The Takeaways</h4>
+          <ul>
+            <li><b>Illusion of Speed</b>AI writes code fast and bugs fast. Velocity without structure is brittle.</li>
+            <li><b>Code is disposable</b>Specs are the durable artifact. Generate code from them; regenerate anytime.</li>
+            <li><b>Gherkin specs</b>Given/When/Then scenarios compile to failing tests — binary, unambiguous, AI-executable.</li>
+            <li><b>Policy Server</b>Automated code-review agent enforces the spec before human review — zero-trust by default.</li>
+            <li><b>Eval-gated deploy</b>Sandbox → canary → production. Promote artifacts, not re-builds. Human approval gate.</li>
+            <li><b>The full series</b>Spec (Day 1) + ADK (Day 2) + MCP/A2A (Day 3) + Security/Evals (Day 4) + SDD (Day 5) = production-grade agent fleet.</li>
+          </ul>
+        </div>
+        <div class="tag-row">
+          <span class="tag">SDD</span><span class="tag">Gherkin</span>
+          <span class="tag">Zero-Trust</span><span class="tag">Production</span>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="wrap">
+    <div class="colophon">
+      <span>The Signal — Issue Nº2</span><span>Whitepaper Nº6 · Lee Boonstra · Google Cloud</span>
+      <span>Created by Kevin 4.5 — AI bot by Dennis Nieling</span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -26,6 +26,7 @@
       <a href="wp-3.html">Agent Tools</a>
       <a href="wp-4.html">Agent Skills</a>
       <a href="wp-5.html">Security &amp; Eval</a>
+      <a href="wp-6.html">Spec-Driven Prod</a>
     </div>
   </nav>
 
@@ -222,22 +223,59 @@
         </div>
       </a>
 
-      <!-- Coming soon -->
-      <div class="feature-link fade" style="--accent:#9aa0a6; opacity:.72; cursor:default">
-        <div class="feature-num" style="-webkit-text-stroke:1px #c9c2ad;color:transparent;background:none">06–07</div>
+      <!-- WP6 -->
+      <a class="feature-link fade" href="wp-6.html" style="--accent:#0891b2">
+        <div class="feature-num">06</div>
         <div class="feature-body">
-          <div class="fl-kicker">More in the series · coming</div>
-          <h3 style="color:#4a4438">Prototype to Production</h3>
-          <p>Day 5 — <em>Spec-Driven Production-Grade Development</em>: cloud deploy, observability, and enterprise-ready agent fleets. Will be added as the paper lands.</p>
-          <div class="byline" style="color:#9aa0a6">Awaiting source links</div>
+          <div class="fl-kicker">Whitepaper · Day 5 · Production-Grade</div>
+          <h3><em>Spec-Driven</em> Production-Grade Development</h3>
+          <p>The series capstone: why code is disposable, Gherkin specs are the source of truth, and zero-trust pipelines with automated policy servers are the only way to ship agents you can actually trust.</p>
+          <div class="byline">Lee Boonstra · Google Cloud · Office of the CTO</div>
         </div>
-        <div class="feature-art" style="border-style:dashed;display:grid;place-items:center">
+        <div class="feature-art">
           <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-            <rect width="400" height="300" fill="#efe9da"/>
-            <text x="200" y="160" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-weight="600" font-size="34" fill="#b8b09a">to be continued</text>
+            <rect width="400" height="300" fill="#f3efe4"/>
+            <!-- SPEC.md document -->
+            <rect x="30" y="50" width="110" height="140" rx="5" fill="#e0f5fb" stroke="#0891b2" stroke-width="2"/>
+            <rect x="30" y="50" width="110" height="28" rx="5" fill="#0891b2"/>
+            <polygon points="122,50 140,50 140,68" fill="#0670a0"/>
+            <text x="85" y="69" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" font-weight="700" fill="#fff">SPEC.md</text>
+            <g font-family="Archivo,sans-serif" font-size="8" fill="#0891b2">
+              <text x="42" y="96">GIVEN…</text>
+              <text x="42" y="110">WHEN…</text>
+              <text x="42" y="124">THEN…</text>
+            </g>
+            <rect x="42" y="134" width="86" height="10" rx="2" fill="#b2e4f0"/>
+            <rect x="42" y="150" width="86" height="10" rx="2" fill="#b2e4f0"/>
+            <text x="85" y="202" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="9" fill="#0891b2">durable</text>
+            <!-- arrow -->
+            <path d="M140 120 L178 120" stroke="#0891b2" stroke-width="2" fill="none" marker-end="url(#aw6)"/>
+            <defs><marker id="aw6" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L5 3 L0 6 Z" fill="#0891b2"/></marker></defs>
+            <!-- AI agent box -->
+            <rect x="178" y="96" width="80" height="48" rx="4" fill="#0c1929" stroke="#0891b2" stroke-width="1.5"/>
+            <text x="218" y="117" text-anchor="middle" font-family="Archivo,sans-serif" font-size="8" font-weight="700" fill="#0891b2">AI AGENT</text>
+            <text x="218" y="132" text-anchor="middle" font-family="Archivo,sans-serif" font-size="7" fill="#5a8af0">generates</text>
+            <!-- code (dashed/disposable) -->
+            <path d="M258 120 L290 120" stroke="#9aa0a6" stroke-width="1.5" stroke-dasharray="4 2" fill="none" marker-end="url(#aw6g)"/>
+            <defs><marker id="aw6g" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L5 3 L0 6 Z" fill="#9aa0a6"/></marker></defs>
+            <rect x="290" y="96" width="80" height="48" rx="4" fill="#f3efe4" stroke="#cdc4ae" stroke-width="1.5" stroke-dasharray="5 3"/>
+            <text x="330" y="117" text-anchor="middle" font-family="Archivo,sans-serif" font-size="8" fill="#9aa0a6">CODE</text>
+            <text x="330" y="132" text-anchor="middle" font-family="Fraunces,serif" font-style="italic" font-size="8" fill="#b8b09a">disposable</text>
+            <!-- pipeline boxes below -->
+            <rect x="178" y="180" width="80" height="28" rx="4" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+            <text x="218" y="198" text-anchor="middle" font-family="Archivo,sans-serif" font-size="8" font-weight="700" fill="#065f46">✓ TESTS</text>
+            <rect x="290" y="180" width="80" height="28" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+            <text x="330" y="198" text-anchor="middle" font-family="Archivo,sans-serif" font-size="8" font-weight="700" fill="#92400e">POLICY</text>
+            <line x1="218" y1="144" x2="218" y2="180" stroke="#1a1712" stroke-width="1.2"/>
+            <line x1="330" y1="144" x2="330" y2="180" stroke="#1a1712" stroke-width="1.2"/>
+            <!-- prod -->
+            <rect x="234" y="236" width="102" height="28" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+            <text x="285" y="254" text-anchor="middle" font-family="Archivo,sans-serif" font-size="8" font-weight="700" fill="#5b21b6">PRODUCTION</text>
+            <line x1="258" y1="208" x2="270" y2="236" stroke="#1a1712" stroke-width="1.2"/>
+            <line x1="330" y1="208" x2="300" y2="236" stroke="#1a1712" stroke-width="1.2"/>
           </svg>
         </div>
-      </div>
+      </a>
     </section>
   </main>
 
