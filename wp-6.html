@@ -280,6 +280,45 @@
     </div>
   </section>
 
+  <section class="glossary-download wrap">
+    <div class="wiki-inner">
+      <div class="wiki-head">
+        <h3>Technical Glossary — Download by Category</h3>
+        <p>All technical terms from across the five-day series, defined and categorised for LLM ingestion. Four thematic files cover agent fundamentals, open protocols, security &amp; evaluation, and spec-driven development.</p>
+      </div>
+      <div class="wiki-grid glossary-grid">
+        <a class="wiki-card glossary-card" href="wiki/glossary-agent-fundamentals.md" download>
+          <span class="wiki-day">Category 1</span>
+          <span class="wiki-title">Agent Fundamentals</span>
+          <span class="wiki-meta">Vibe coding · harness · context types · memory · model routing · SDLC eras</span>
+          <span class="wiki-dl">↓ Download</span>
+        </a>
+        <a class="wiki-card glossary-card" href="wiki/glossary-protocols-interoperability.md" download>
+          <span class="wiki-day">Category 2</span>
+          <span class="wiki-title">Protocols &amp; Interoperability</span>
+          <span class="wiki-meta">MCP · A2A · ADK · Agents CLI · SKILL.md · graph workflows · tool catalogue</span>
+          <span class="wiki-dl">↓ Download</span>
+        </a>
+        <a class="wiki-card glossary-card" href="wiki/glossary-security-evaluation.md" download>
+          <span class="wiki-day">Category 3</span>
+          <span class="wiki-title">Security &amp; Evaluation</span>
+          <span class="wiki-meta">Prompt injection · sandboxing · least privilege · LM judge · red-teaming · verdict framework</span>
+          <span class="wiki-dl">↓ Download</span>
+        </a>
+        <a class="wiki-card glossary-card" href="wiki/glossary-spec-driven-dev.md" download>
+          <span class="wiki-day">Category 4</span>
+          <span class="wiki-title">Spec-Driven Dev &amp; Pipelines</span>
+          <span class="wiki-meta">SDD · Gherkin · Given/When/Then · Policy Server · eval-gated deploy · OpenTelemetry</span>
+          <span class="wiki-dl">↓ Download</span>
+        </a>
+      </div>
+      <div class="wiki-all">
+        <button id="dl-gloss-btn" class="btn-dlall">↓ Download All Glossaries</button>
+        <p class="wiki-note">Plain markdown (UTF-8), alphabetically organised within each category. Drop directly into any RAG pipeline, vector store, or agent memory system.</p>
+      </div>
+    </div>
+  </section>
+
   <footer class="wrap">
     <div class="colophon">
       <span>The Signal — Issue Nº2</span><span>Whitepaper Nº6 · Lee Boonstra · Google Cloud</span>
@@ -288,16 +327,7 @@
   </footer>
 
   <script>
-  document.getElementById('dl-all-btn').addEventListener('click', async function() {
-    const files = [
-      'wiki/day-1-new-sdlc.md',
-      'wiki/day-2a-agent-lifecycle.md',
-      'wiki/day-2b-agent-tools-interoperability.md',
-      'wiki/day-3-agent-skills.md',
-      'wiki/day-4-agent-security-eval.md',
-      'wiki/day-5-spec-driven-production.md'
-    ];
-    const btn = this;
+  async function dlFiles(files, outname, btn) {
     btn.textContent = 'Downloading…';
     btn.disabled = true;
     try {
@@ -309,15 +339,37 @@
       const blob = new Blob([combined], {type: 'text/plain'});
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
-      a.download = 'the-signal-issue2-wiki.md';
+      a.download = outname;
       a.click();
       URL.revokeObjectURL(a.href);
       btn.textContent = '✓ Downloaded';
-      setTimeout(() => { btn.textContent = '↓ Download All as ZIP'; btn.disabled = false; }, 3000);
+      setTimeout(() => { btn.textContent = btn.dataset.label; btn.disabled = false; }, 3000);
     } catch(e) {
-      btn.textContent = '↓ Download All as ZIP';
+      btn.textContent = btn.dataset.label;
       btn.disabled = false;
     }
+  }
+
+  document.getElementById('dl-all-btn').addEventListener('click', function() {
+    dlFiles([
+      'wiki/day-1-new-sdlc.md',
+      'wiki/day-2a-agent-lifecycle.md',
+      'wiki/day-2b-agent-tools-interoperability.md',
+      'wiki/day-3-agent-skills.md',
+      'wiki/day-4-agent-security-eval.md',
+      'wiki/day-5-spec-driven-production.md'
+    ], 'the-signal-issue2-wiki.md', this);
+    this.dataset.label = '↓ Download All as ZIP';
+  });
+
+  document.getElementById('dl-gloss-btn').addEventListener('click', function() {
+    dlFiles([
+      'wiki/glossary-agent-fundamentals.md',
+      'wiki/glossary-protocols-interoperability.md',
+      'wiki/glossary-security-evaluation.md',
+      'wiki/glossary-spec-driven-dev.md'
+    ], 'the-signal-issue2-glossary.md', this);
+    this.dataset.label = '↓ Download All Glossaries';
   });
   </script>
 </body>
