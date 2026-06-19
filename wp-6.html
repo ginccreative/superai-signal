@@ -229,11 +229,96 @@
     </div>
   </main>
 
+  <section class="wiki-download wrap">
+    <div class="wiki-inner">
+      <div class="wiki-head">
+        <h3>LLM Wiki — Download the Series</h3>
+        <p>All five whitepapers distilled into structured markdown files, optimised for LLM ingestion, agent memory, and knowledge bases. Each file contains a summary, key concepts, core arguments, and agent-ready takeaways.</p>
+      </div>
+      <div class="wiki-grid">
+        <a class="wiki-card" href="wiki/day-1-new-sdlc.md" download>
+          <span class="wiki-day">Day 1</span>
+          <span class="wiki-title">The New SDLC With Vibe Coding</span>
+          <span class="wiki-meta">Osmani · Saboo · Kartakis</span>
+          <span class="wiki-dl">↓ Download</span>
+        </a>
+        <a class="wiki-card" href="wiki/day-2a-agent-lifecycle.md" download>
+          <span class="wiki-day">Day 2a</span>
+          <span class="wiki-title">Managing the Agent Lifecycle</span>
+          <span class="wiki-meta">Google Developers · Codelab</span>
+          <span class="wiki-dl">↓ Download</span>
+        </a>
+        <a class="wiki-card" href="wiki/day-2b-agent-tools-interoperability.md" download>
+          <span class="wiki-day">Day 2b</span>
+          <span class="wiki-title">Agent Tools &amp; Interoperability</span>
+          <span class="wiki-meta">Patlolla · Olejniczak · Ippolito</span>
+          <span class="wiki-dl">↓ Download</span>
+        </a>
+        <a class="wiki-card" href="wiki/day-3-agent-skills.md" download>
+          <span class="wiki-day">Day 3</span>
+          <span class="wiki-title">Agent Skills</span>
+          <span class="wiki-meta">Das · Hernandez Larios · Nigam · Kolan · Singhal</span>
+          <span class="wiki-dl">↓ Download</span>
+        </a>
+        <a class="wiki-card" href="wiki/day-4-agent-security-eval.md" download>
+          <span class="wiki-day">Day 4</span>
+          <span class="wiki-title">Agent Security &amp; Evaluation</span>
+          <span class="wiki-meta">Kartakis · Eidelman · Bakkali · Subasioglu</span>
+          <span class="wiki-dl">↓ Download</span>
+        </a>
+        <a class="wiki-card wiki-card--accent" href="wiki/day-5-spec-driven-production.md" download>
+          <span class="wiki-day">Day 5</span>
+          <span class="wiki-title">Spec-Driven Production-Grade Development</span>
+          <span class="wiki-meta">Lee Boonstra · Google Cloud</span>
+          <span class="wiki-dl">↓ Download</span>
+        </a>
+      </div>
+      <div class="wiki-all">
+        <button id="dl-all-btn" class="btn-dlall">↓ Download All as ZIP</button>
+        <p class="wiki-note">Files are plain markdown (UTF-8). Compatible with Claude, ChatGPT, Gemini, Cursor, and any LLM context pipeline.</p>
+      </div>
+    </div>
+  </section>
+
   <footer class="wrap">
     <div class="colophon">
       <span>The Signal — Issue Nº2</span><span>Whitepaper Nº6 · Lee Boonstra · Google Cloud</span>
       <span>Created by Kevin 4.5 — AI bot by Dennis Nieling</span>
     </div>
   </footer>
+
+  <script>
+  document.getElementById('dl-all-btn').addEventListener('click', async function() {
+    const files = [
+      'wiki/day-1-new-sdlc.md',
+      'wiki/day-2a-agent-lifecycle.md',
+      'wiki/day-2b-agent-tools-interoperability.md',
+      'wiki/day-3-agent-skills.md',
+      'wiki/day-4-agent-security-eval.md',
+      'wiki/day-5-spec-driven-production.md'
+    ];
+    const btn = this;
+    btn.textContent = 'Downloading…';
+    btn.disabled = true;
+    try {
+      const results = await Promise.all(files.map(f => fetch(f).then(r => r.text())));
+      const combined = files.map((f, i) => {
+        const name = f.split('/').pop();
+        return `${'='.repeat(72)}\n${name}\n${'='.repeat(72)}\n\n${results[i]}`;
+      }).join('\n\n\n');
+      const blob = new Blob([combined], {type: 'text/plain'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'the-signal-issue2-wiki.md';
+      a.click();
+      URL.revokeObjectURL(a.href);
+      btn.textContent = '✓ Downloaded';
+      setTimeout(() => { btn.textContent = '↓ Download All as ZIP'; btn.disabled = false; }, 3000);
+    } catch(e) {
+      btn.textContent = '↓ Download All as ZIP';
+      btn.disabled = false;
+    }
+  });
+  </script>
 </body>
 </html>
